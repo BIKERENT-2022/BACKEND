@@ -8,6 +8,7 @@ import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
 import pe.com.bikerent.backend.repositories.BicicletaRepository;
 import pe.com.bikerent.backend.services.BicicletaService;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -15,6 +16,30 @@ public class BicicletaServiceImpl implements BicicletaService {
 
     @Autowired
     BicicletaRepository bicicletaRepository;
+
+    @Transactional
+    public Bicicleta createBicicletaS(Bicicleta bicicleta){
+        Bicicleta newBicicleta = bicicletaRepository.save(new Bicicleta(
+                bicicleta.getModelo(),
+                bicicleta.getMarca(),
+                bicicleta.getColor(),
+                bicicleta.getTipo(),
+                bicicleta.getImagen(),
+                bicicleta.getEmpresa()));
+
+        return newBicicleta;
+    }
+
+    @Transactional
+    public Bicicleta updatebicicletasByIdS(Bicicleta foundBicicleta){
+        Bicicleta updatedBicicleta = bicicletaRepository.save(foundBicicleta);
+        return updatedBicicleta;
+    }
+
+    @Transactional
+    public void deleteBicicletaByIdS(Long id){
+        bicicletaRepository.deleteById(id);
+    }
 
     public List<Bicicleta> getAllBicicletasS(){
         List<Bicicleta> bicicletas = bicicletaRepository.findAll();

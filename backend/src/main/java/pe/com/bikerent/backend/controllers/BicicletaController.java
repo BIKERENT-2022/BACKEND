@@ -29,6 +29,16 @@ public class BicicletaController {
     @PostMapping("/bicicletas")
     public ResponseEntity<Bicicleta> createBicicleta(@RequestBody Bicicleta bicicleta) {
 
+        Bicicleta newBicicleta = bicicletaService.createBicicletaS(new Bicicleta(
+                bicicleta.getModelo(),
+                bicicleta.getMarca(),
+                bicicleta.getColor(),
+                bicicleta.getTipo(),
+                bicicleta.getImagen(),
+                bicicleta.getEmpresa()));
+        return new ResponseEntity<Bicicleta>(newBicicleta, HttpStatus.CREATED);
+
+        /*
         Bicicleta newBicicleta = bicicletaRepository.save(new Bicicleta(
                 bicicleta.getModelo(),
                 bicicleta.getMarca(),
@@ -38,6 +48,7 @@ public class BicicletaController {
                 bicicleta.getEmpresa()));
 
         return new ResponseEntity<Bicicleta>(newBicicleta, HttpStatus.CREATED);
+        */
     }
 
 
@@ -66,8 +77,33 @@ public class BicicletaController {
                 orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
         foundBicicleta.setAlquileres(null);
 
+        Bicicleta updatedBicicleta = bicicletaService.updatebicicletasByIdS(foundBicicleta);
+        return new ResponseEntity<Bicicleta>(updatedBicicleta, HttpStatus.OK);
+
+        /*
+        Bicicleta foundBicicleta = bicicletaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
+
+        if (bicicleta.getModelo()!=null)
+            foundBicicleta.setModelo(bicicleta.getModelo());
+        if (bicicleta.getMarca()!=null)
+            foundBicicleta.setMarca(bicicleta.getMarca());
+        if (bicicleta.getColor()!=null)
+            foundBicicleta.setColor(bicicleta.getColor());
+        if (bicicleta.getTipo()!=null)
+            foundBicicleta.setTipo(bicicleta.getTipo());
+        if (bicicleta.getImagen()!=null)
+            foundBicicleta.setImagen(bicicleta.getImagen());
+        if (bicicleta.getEmpresa()!=null)
+            foundBicicleta.setEmpresa(bicicleta.getEmpresa());
+
+        Bicicleta foundBicicleta1 = bicicletaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
+        foundBicicleta.setAlquileres(null);
+
         Bicicleta updatedBicicleta = bicicletaRepository.save(foundBicicleta);
         return new ResponseEntity<Bicicleta>(updatedBicicleta, HttpStatus.OK);
+        */
     }
 
 
@@ -75,8 +111,14 @@ public class BicicletaController {
     /* -------------------------------------------- BORRAR BICICLETAS -------------------------------------------- */
     @DeleteMapping("/bicicletas/{id}")
     public ResponseEntity<HttpStatus>deleteBicicletaById(@PathVariable("id") Long id){
+
+        bicicletaService.deleteBicicletaByIdS(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        /*
         bicicletaRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        */
     }
 
 

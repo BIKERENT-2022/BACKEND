@@ -33,7 +33,7 @@ public class AlquilerController {
     @PostMapping("/alquileres")
     public ResponseEntity<Alquiler> createAlquiler(@RequestBody Alquiler alquiler) {
 
-        Alquiler newAlquiler = alquilerService.save(new Alquiler(
+        Alquiler newAlquiler = alquilerService.createAlquilerS(new Alquiler(
                 alquiler.getPlazo(),
                 alquiler.getFecha(),
                 alquiler.getHora(),
@@ -88,7 +88,7 @@ public class AlquilerController {
         foundCliente1.getBicicleta().setEmpresa(null);
         foundCliente1.getBicicleta().setAlquileres(null);
 
-        Alquiler updatedAlquiler = alquilerService.save2(foundCliente);
+        Alquiler updatedAlquiler = alquilerService.updateAlquilerByIdS(foundCliente);
         return new ResponseEntity<Alquiler>(updatedAlquiler, HttpStatus.OK);
 
         /*

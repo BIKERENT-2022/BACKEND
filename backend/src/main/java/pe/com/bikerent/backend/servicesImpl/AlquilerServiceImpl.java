@@ -21,7 +21,7 @@ public class AlquilerServiceImpl implements AlquilerService {
 
 
     @Transactional
-    public Alquiler save(Alquiler alquiler){
+    public Alquiler createAlquilerS(Alquiler alquiler){
         Alquiler newAlquiler = alquilerRepository.save(new Alquiler(
                 alquiler.getPlazo(),
                 alquiler.getFecha(),
@@ -34,7 +34,7 @@ public class AlquilerServiceImpl implements AlquilerService {
     }
 
     @Transactional
-    public Alquiler save2(Alquiler foundCliente){
+    public Alquiler updateAlquilerByIdS(Alquiler foundCliente){
         Alquiler updatedAlquiler = alquilerRepository.save(foundCliente);
         return updatedAlquiler;
     }
