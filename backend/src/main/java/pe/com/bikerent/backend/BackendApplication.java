@@ -37,22 +37,22 @@ public class BackendApplication {
             Usuario usuario = new Usuario("pepito","pepito52","Empresa");
             usuarioRepository.save(usuario);
             switch (usuario.getTipo_usuario()){
-                case "Empresa": empresaRepository.save(new Empresa(usuario.getId(),"123","Pepe Gonzales","pepegonzales@hotmail.com","flores paradero 7,sjl","123456789","a")); break;
-                case "Cliente": clienteRepository.save(new Cliente(usuario.getId(),"456","Pepe Gonzales","pepegonzales@hotmail.com","flores paradero 7","123456789","a")); break;
+                case "Empresa": empresaRepository.save(new Empresa(usuario.getId(),"11122233344","Pepe Gonzales","pepegonzales@hotmail.com","flores paradero 7,sjl","123456789","empresaa.jpg")); break;
+                case "Cliente": clienteRepository.save(new Cliente(usuario.getId(),"14251562","Pepe Gonzales","pepegonzales@hotmail.com","flores paradero 7","123456789","clientea.jpg")); break;
             }
 
             Usuario usuario3 = new Usuario("carlitos","carlitos52","Empresa");
             usuarioRepository.save(usuario3);
             switch (usuario3.getTipo_usuario()){
-                case "Empresa": empresaRepository.save(new Empresa(usuario3.getId(),"142","Carlos Peres","carlosperes@hotmail.com","flores paradero 9, sjl","147258369","c")); break;
-                case "Cliente": clienteRepository.save(new Cliente(usuario3.getId(),"122","Carlos Peres","carlosperes@hotmail.com","flores paradero 9","147258369","c")); break;
+                case "Empresa": empresaRepository.save(new Empresa(usuario3.getId(),"11144422266","Carlos Peres","carlosperes@hotmail.com","flores paradero 9, sjl","147258369","empresac.jpg")); break;
+                case "Cliente": clienteRepository.save(new Cliente(usuario3.getId(),"21211122","Carlos Peres","carlosperes@hotmail.com","flores paradero 9","147258369","clientec.jpg")); break;
             }
 
             Usuario usuario5 = new Usuario("alexito","alex76","Empresa");
             usuarioRepository.save(usuario5);
             switch (usuario5.getTipo_usuario()){
-                case "Empresa": empresaRepository.save(new Empresa(usuario5.getId(),"762","Alex Leslo","alexleslo@hotmail.com","flores paradero 11","258369741","o")); break;
-                case "Cliente": clienteRepository.save(new Cliente(usuario5.getId(),"762","Alex Leslo","alexleslo@hotmail.com","flores paradero 11","258369741","o")); break;
+                case "Empresa": empresaRepository.save(new Empresa(usuario5.getId(),"77766622211","Alex Leslo","alexleslo@hotmail.com","flores paradero 11","258369741","empresao.jpg")); break;
+                case "Cliente": clienteRepository.save(new Cliente(usuario5.getId(),"77662266","Alex Leslo","alexleslo@hotmail.com","flores paradero 11","258369741","clienteo.jpg")); break;
             }
 
 
@@ -61,43 +61,43 @@ public class BackendApplication {
             Usuario usuario2 = new Usuario("pedro","pedroo52","Cliente");
             usuarioRepository.save(usuario2);
             switch (usuario2.getTipo_usuario()){
-                case "Empresa": empresaRepository.save(new Empresa(usuario2.getId(),"789","Pedro Castillo","pedrocastillo@hotmail.com","flores paradero 8","987654321","b")); break;
-                case "Cliente": clienteRepository.save(new Cliente(usuario2.getId(),"111","Pedro Castillo","pedrocastillo@hotmail.com","flores paradero 8","987654321","b")); break;
+                case "Empresa": empresaRepository.save(new Empresa(usuario2.getId(),"77788899955","Pedro Castillo","pedrocastillo@hotmail.com","flores paradero 8","987654321","empresab.jpg")); break;
+                case "Cliente": clienteRepository.save(new Cliente(usuario2.getId(),"11111111","Pedro Castillo","pedrocastillo@hotmail.com","flores paradero 8","987654321","clienteb.jpg")); break;
             }
 
             Usuario usuario4 = new Usuario("diegooo","diego76","Cliente");
             usuarioRepository.save(usuario4);
             switch (usuario4.getTipo_usuario()){
-                case "Empresa": empresaRepository.save(new Empresa(usuario4.getId(),"789","Diego Casaverde","diegocasaverde@hotmail.com","flores paradero 10","369258147","d")); break;
-                case "Cliente": clienteRepository.save(new Cliente(usuario4.getId(),"222","Diego Casaverde","diegocasaverde@hotmail.com","flores paradero 10","369258147","d")); break;
+                case "Empresa": empresaRepository.save(new Empresa(usuario4.getId(),"7778889919","Diego Casaverde","diegocasaverde@hotmail.com","flores paradero 10","369258147","empresad.jpg")); break;
+                case "Cliente": clienteRepository.save(new Cliente(usuario4.getId(),"22222222","Diego Casaverde","diegocasaverde@hotmail.com","flores paradero 10","369258147","cliented.jpg")); break;
             }
 
             Usuario usuario6 = new Usuario("saullll","saul76","Cliente");
             usuarioRepository.save(usuario6);
             switch (usuario4.getTipo_usuario()){
-                case "Empresa": empresaRepository.save(new Empresa(usuario6.getId(),"7489","saul saul","saul@hotmail.com","flores paradero 14","369253577","e")); break;
-                case "Cliente": clienteRepository.save(new Cliente(usuario6.getId(),"3221","saul saul","saul@hotmail.com","flores paradero 14","364258147","e")); break;
+                case "Empresa": empresaRepository.save(new Empresa(usuario6.getId(),"77744888999","saul saul","saul@hotmail.com","flores paradero 14","369253577","empresae.jpg")); break;
+                case "Cliente": clienteRepository.save(new Cliente(usuario6.getId(),"33222211","saul saul","saul@hotmail.com","flores paradero 14","364258147","clientee.jpg")); break;
             }
 
 
 
             /* ---------------------------------------------------------------------------- */
             /* ------------------- CREAR DATOS PARA LA TABLA BICICLETAS ------------------- */
-            Bicicleta bicicleta = new Bicicleta("BMX","Cube bike","Black","electrica","a",empresaRepository.getReferenceById(1L));
+            Bicicleta bicicleta = new Bicicleta("BMX","Cube bike","Black","electrica","bicicleaa.jpg",empresaRepository.getReferenceById(1L));
             bicicletaRepository.save(bicicleta);
 
-            Bicicleta bicicleta2 = new Bicicleta("BMX","Bike Trek","Red","electrica","b",empresaRepository.getReferenceById(1L));
+            Bicicleta bicicleta2 = new Bicicleta("BMX","Bike Trek","Red","electrica","bicicleab.jpg",empresaRepository.getReferenceById(1L));
             bicicletaRepository.save(bicicleta2);
 
-            Bicicleta bicicleta3 = new Bicicleta("Mini BMX","Scott bikes","White","plegable","c",empresaRepository.getReferenceById(2L));
+            Bicicleta bicicleta3 = new Bicicleta("Mini BMX","Scott bikes","White","plegable","bicicleac.jpg",empresaRepository.getReferenceById(2L));
             bicicletaRepository.save(bicicleta3);
-            Bicicleta bicicleta4 = new Bicicleta("Montaniera","Cannodale","Yellow","electrica","d",empresaRepository.getReferenceById(2L));
+            Bicicleta bicicleta4 = new Bicicleta("Montaniera","Cannodale","Yellow","electrica","biciclead.jpg",empresaRepository.getReferenceById(2L));
             bicicletaRepository.save(bicicleta4);
 
-            Bicicleta bicicleta5 = new Bicicleta("Campera","Cube bike","Red","plegable","e",empresaRepository.getReferenceById(2L));
+            Bicicleta bicicleta5 = new Bicicleta("Campera","Cube bike","Red","plegable","bicicleae.jpg",empresaRepository.getReferenceById(2L));
             bicicletaRepository.save(bicicleta5);
 
-            Bicicleta bicicleta6 = new Bicicleta("Campera","Scott bikes","Orange","plegable","f",empresaRepository.getReferenceById(3L));
+            Bicicleta bicicleta6 = new Bicicleta("Campera","Scott bikes","Orange","plegable","bicicleaf.jpg",empresaRepository.getReferenceById(3L));
             bicicletaRepository.save(bicicleta6);
 
 
