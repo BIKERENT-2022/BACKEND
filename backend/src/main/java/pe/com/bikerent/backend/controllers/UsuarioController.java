@@ -6,10 +6,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.com.bikerent.backend.entities.Cliente;
 import pe.com.bikerent.backend.entities.Empresa;
+import pe.com.bikerent.backend.entities.Suscripcion;
 import pe.com.bikerent.backend.entities.Usuario;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
 import pe.com.bikerent.backend.repositories.ClienteRepository;
 import pe.com.bikerent.backend.repositories.EmpresaRepository;
+import pe.com.bikerent.backend.repositories.SuscripcionesRepository;
 import pe.com.bikerent.backend.repositories.UsuarioRepository;
 
 import java.util.List;
@@ -23,6 +25,8 @@ public class UsuarioController {
     private ClienteRepository clienteRepository;
     @Autowired
     private EmpresaRepository empresaRepository;
+    @Autowired
+    private SuscripcionesRepository suscripcionesRepository;
 
 
     /*----------------------------------------------------- LISTA DE TODOS LOS USUARIOS-----------------------------------------------------*/
@@ -81,19 +85,13 @@ public class UsuarioController {
 
 
     /*----------------------------------------------------- ELIMINAR USUARIOS -----------------------------------------------------*/
-/*
-    @DeleteMapping("/owners/{id}")
-    public ResponseEntity<HttpStatus> deleteOwnerById(@PathVariable("id") Long id) {
-        Usuario usuario = usuarioRepository.ge
+
+    // Borrar usuarios
+    @DeleteMapping("/usuarios/{id}")
+    public ResponseEntity<HttpStatus>deleteUsuarioById(@PathVariable("id") Long id){
         usuarioRepository.deleteById(id);
-        DeleteDatos(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-
-    public ResponseEntity<Empresa>DeleteDatos(Long id){
-        if ()
-    }*/
-
 
     //---------------------- MOSTRAR USUARIO SEGUN NOMBRE ---------------------
     @GetMapping("/usuarios/usuario/{usuario}")

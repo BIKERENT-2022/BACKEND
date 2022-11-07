@@ -4,9 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.com.bikerent.backend.entities.Bicicleta;
-import pe.com.bikerent.backend.entities.Empresa;
-import pe.com.bikerent.backend.entities.Usuario;
+import pe.com.bikerent.backend.entities.*;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
 import pe.com.bikerent.backend.repositories.BicicletaRepository;
 import pe.com.bikerent.backend.repositories.EmpresaRepository;
@@ -121,6 +119,14 @@ public class EmpresaController {
         Empresa empresa = empresaRepository.findByCorreoSQL(correo);
         empresa.setBicicletas(null);
         return new ResponseEntity<Empresa>(empresa,HttpStatus.OK);
+    }
+
+
+    // Borrar EMPRESA
+    @DeleteMapping("/empresas/{id}")
+    public ResponseEntity<HttpStatus>deleteEmpresaById(@PathVariable("id") Long id){
+        empresaRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }

@@ -84,8 +84,8 @@ public class ClienteController {
         }
         for (Cliente c : clientes) {
             for (Alquiler a : c.getAlquileres()) {
-                /*a.set
-                a.setEmpresa(null);*/
+                a.setCliente(null);
+                a.setBicicleta(null);
             }
         }
         return new ResponseEntity<List<Cliente>>(clientes,HttpStatus.OK);
@@ -133,6 +133,15 @@ public class ClienteController {
         Cliente cliente = clienteRepository.findByCorreoSQL(correo);
         cliente.setAlquileres(null);
         return new ResponseEntity<Cliente>(cliente,HttpStatus.OK);
+    }
+
+
+
+    // Borrar Cliente
+    @DeleteMapping("/clientes/{id}")
+    public ResponseEntity<HttpStatus>deleteClienteById(@PathVariable("id") Long id){
+        clienteRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }

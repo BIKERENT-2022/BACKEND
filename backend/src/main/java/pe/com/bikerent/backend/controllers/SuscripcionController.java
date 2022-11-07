@@ -78,4 +78,12 @@ public class SuscripcionController {
         Suscripcion updatedSuscripcion = suscripcionesRepository.save(foundSuscripcion);
         return new ResponseEntity<Suscripcion>(updatedSuscripcion, HttpStatus.OK);
     }
+
+
+    // Borrar Suscripcion
+    @DeleteMapping("/suscripciones/{id}")
+    public ResponseEntity<HttpStatus>deleteSuscripcionById(@PathVariable("id") Long id){
+        suscripcionesRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
