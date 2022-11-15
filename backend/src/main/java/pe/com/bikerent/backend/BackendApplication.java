@@ -83,21 +83,21 @@ public class BackendApplication {
 
             /* ---------------------------------------------------------------------------- */
             /* ------------------- CREAR DATOS PARA LA TABLA BICICLETAS ------------------- */
-            Bicicleta bicicleta = new Bicicleta("BMX","Cube bike","Black","electrica","bicicleaa.jpg",empresaRepository.getReferenceById(1L));
+            Bicicleta bicicleta = new Bicicleta("BMX","Cube bike","Black","electrica","https://cdn.discordapp.com/attachments/1010970835332370593/1042200615155159070/unknown.png",empresaRepository.getReferenceById(1L));
             bicicletaRepository.save(bicicleta);
 
-            Bicicleta bicicleta2 = new Bicicleta("BMX","Bike Trek","Red","electrica","bicicleab.jpg",empresaRepository.getReferenceById(1L));
+            Bicicleta bicicleta2 = new Bicicleta("BMX","Bike Trek","Red","electrica","https://www.sanferbike.com/videostv/wp-content/uploads/URBAN-1-600x400-1.jpg",empresaRepository.getReferenceById(1L));
             bicicletaRepository.save(bicicleta2);
 
-            Bicicleta bicicleta3 = new Bicicleta("Mini BMX","Scott bikes","White","plegable","bicicleac.jpg",empresaRepository.getReferenceById(2L));
+            Bicicleta bicicleta3 = new Bicicleta("Mini BMX","Scott bikes","White","plegable","https://images-ext-1.discordapp.net/external/vIKINyNcxa0JdSI7TfFxNC-eTYTdZp_Jfjmk0DGqKAY/https/images-na.ssl-images-amazon.com/images/I/81KWS%2BwQMXL._AC_UL600_SR600%2C600_.jpg",empresaRepository.getReferenceById(2L));
             bicicletaRepository.save(bicicleta3);
-            Bicicleta bicicleta4 = new Bicicleta("Montaniera","Cannodale","Yellow","electrica","biciclead.jpg",empresaRepository.getReferenceById(2L));
+            Bicicleta bicicleta4 = new Bicicleta("Montaniera","Cannodale","Yellow","electrica","https://media.discordapp.net/attachments/1010970835332370593/1042201004176838747/unknown.png",empresaRepository.getReferenceById(2L));
             bicicletaRepository.save(bicicleta4);
 
-            Bicicleta bicicleta5 = new Bicicleta("Campera","Cube bike","Red","plegable","bicicleae.jpg",empresaRepository.getReferenceById(2L));
+            Bicicleta bicicleta5 = new Bicicleta("Campera","Cube bike","Red","plegable","https://media.discordapp.net/attachments/1010970835332370593/1042201182246015028/unknown.png",empresaRepository.getReferenceById(2L));
             bicicletaRepository.save(bicicleta5);
 
-            Bicicleta bicicleta6 = new Bicicleta("Campera","Scott bikes","Orange","plegable","bicicleaf.jpg",empresaRepository.getReferenceById(3L));
+            Bicicleta bicicleta6 = new Bicicleta("Campera","Scott bikes","Orange","plegable","https://media.discordapp.net/attachments/1010970835332370593/1042201250961297490/unknown.png",empresaRepository.getReferenceById(3L));
             bicicletaRepository.save(bicicleta6);
 
 

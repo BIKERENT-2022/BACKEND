@@ -17,15 +17,19 @@ import pe.com.bikerent.backend.services.UsuarioService;
 
 import java.util.List;
 
+
+@CrossOrigin(origins = "http://localhost:4200") //Para dar permisos de conexcion
 @RestController
 @RequestMapping("/api")
 public class UsuarioController {
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+
     /*@Autowired
+    private UsuarioRepository usuarioRepository;
+    @Autowired
     private ClienteRepository clienteRepository;
     @Autowired
     private EmpresaRepository empresaRepository;*/
+
     @Autowired
     private UsuarioService usuarioService;
 
@@ -64,18 +68,8 @@ public class UsuarioController {
     @PutMapping("/usuarios/{id}")
     public ResponseEntity<Usuario> updateUsuarioById(@PathVariable("id") Long id,@RequestBody Usuario usuario) {
 
-        Usuario foundUsuario = usuarioRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found Owner with id="+id));
-
-        if (usuario.getUsuario()!=null)
-            foundUsuario.setUsuario(usuario.getUsuario());
-        if (usuario.getContrasenia()!=null)
-            foundUsuario.setContrasenia(usuario.getContrasenia());
-        if (usuario.getTipo_usuario()!=null)
-            new ResourceNotFoundException("No se puede cambiar esta variable perteneciente al id="+id);
-
-        Usuario updatedUsuario = usuarioService.updateUsuarioByIdS(foundUsuario);
-        return new ResponseEntity<Usuario>(updatedUsuario, HttpStatus.OK);
+        Usuario foundUsuario = usuarioService.updateUsuarioByIdS(id, usuario);
+        return new ResponseEntity<Usuario>(foundUsuario, HttpStatus.OK);
 
         /*
         Usuario foundUsuario = usuarioRepository.findById(id).

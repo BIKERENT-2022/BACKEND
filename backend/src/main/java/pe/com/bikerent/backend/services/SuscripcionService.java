@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface SuscripcionService {
     public Suscripcion createSuscripcionS(Suscripcion suscripcion);
-    public Suscripcion updateSuscripcionByIdS(Suscripcion foundSuscripcion);
+    public Suscripcion updateSuscripcionByIdS(Long id, Suscripcion suscripcion);
     public void deleteSuscripcionByIdS(Long id);
     public List<Suscripcion> getAllSuscripcionesS();
     public Suscripcion getSuscripcionesByIdS(Long id);

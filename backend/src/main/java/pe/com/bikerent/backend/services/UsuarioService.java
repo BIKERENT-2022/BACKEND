@@ -14,7 +14,7 @@ public interface UsuarioService {
 
     public Usuario createUsuarioS(Usuario usuario);
 
-    public Usuario updateUsuarioByIdS(Usuario usuario);
+    public Usuario updateUsuarioByIdS(Long id, Usuario usuario);
     public void deleteUsuarioByIdS(Long id);
     public List<Usuario> getAllUsuariosS();
     public Usuario getUsuarioByUsuarioS(String usu);

@@ -1,5 +1,4 @@
 package pe.com.bikerent.backend.servicesImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +8,6 @@ import pe.com.bikerent.backend.entities.Alquiler;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
 import pe.com.bikerent.backend.repositories.AlquilerRepository;
 import pe.com.bikerent.backend.services.AlquilerService;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -34,7 +32,31 @@ public class AlquilerServiceImpl implements AlquilerService {
     }
 
     @Transactional
-    public Alquiler updateAlquilerByIdS(Alquiler foundCliente){
+    public Alquiler updateAlquilerByIdS(Long id, Alquiler alquiler){
+        Alquiler foundCliente = alquilerRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Alquiler with id="+id));
+
+        if (alquiler.getPlazo()!=null)
+            foundCliente.setPlazo(alquiler.getPlazo());
+        if (alquiler.getFecha()!=null)
+            foundCliente.setFecha(alquiler.getFecha());
+        if (alquiler.getHora()!=null)
+            foundCliente.setHora(alquiler.getHora());
+        if (alquiler.getCliente()!=null)
+            foundCliente.setCliente(alquiler.getCliente());
+        if (alquiler.getBicicleta()!=null)
+            foundCliente.setBicicleta(alquiler.getBicicleta());
+        if (alquiler.getEstadoAlquiler()!=null)
+            foundCliente.setEstadoAlquiler(alquiler.getEstadoAlquiler());
+        if (alquiler.getDelivery()!=null)
+            foundCliente.setDelivery(alquiler.getDelivery());
+
+        Alquiler foundCliente1 = alquilerRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Alquiler with id="+id));
+        foundCliente1.getCliente().setAlquileres(null);
+        foundCliente1.getBicicleta().setEmpresa(null);
+        foundCliente1.getBicicleta().setAlquileres(null);
+
         Alquiler updatedAlquiler = alquilerRepository.save(foundCliente);
         return updatedAlquiler;
     }

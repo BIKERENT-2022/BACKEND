@@ -11,13 +11,13 @@ import pe.com.bikerent.backend.services.DeliveryService;
 
 import java.util.List;
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class DelivaryController {
 
-    @Autowired
-    private DeliveryRepository deliveryRepository;
+    /*@Autowired
+    private DeliveryRepository deliveryRepository;*/
     @Autowired
     private DeliveryService deliveryService;
 
@@ -53,27 +53,8 @@ public class DelivaryController {
     @PutMapping("/deliveries/{id}")
     public ResponseEntity<Delivery> updateDeliveryById(@PathVariable("id") Long id,@RequestBody Delivery delivery) {
 
-        Delivery foundDelivery = deliveryRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found delivery with id="+id));
-
-        if (delivery.getRepartidor()!=null)
-            foundDelivery.setRepartidor(delivery.getRepartidor());
-        if (delivery.getFecha_envio()!=null)
-            foundDelivery.setFecha_envio(delivery.getFecha_envio());
-        if (delivery.getFecha_recojo()!=null)
-            foundDelivery.setFecha_recojo(delivery.getFecha_recojo());
-        if (delivery.getHora_envio()!=null)
-            foundDelivery.setHora_envio(delivery.getHora_envio());
-        if (delivery.getHora_recojo()!=null)
-            foundDelivery.setHora_recojo(delivery.getHora_recojo());
-        if (delivery.getDireccion_envio()!=null)
-            foundDelivery.setDireccion_envio(delivery.getDireccion_envio());
-        if (delivery.getDireccion_recojo()!=null)
-            foundDelivery.setDireccion_recojo(delivery.getDireccion_recojo());
-
-
-        Delivery updatedDelivery = deliveryService.updateDeliveryByIdS(foundDelivery);
-        return new ResponseEntity<Delivery>(updatedDelivery, HttpStatus.OK);
+        Delivery foundDelivery = deliveryService.updateDeliveryByIdS(id, delivery);
+        return new ResponseEntity<Delivery>(foundDelivery, HttpStatus.OK);
 
         /*
         Delivery foundDelivery = deliveryRepository.findById(id).

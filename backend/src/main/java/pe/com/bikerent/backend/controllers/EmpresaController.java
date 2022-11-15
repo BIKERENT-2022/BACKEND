@@ -12,12 +12,13 @@ import pe.com.bikerent.backend.services.EmpresaService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class EmpresaController {
-    @Autowired
-    private EmpresaRepository empresaRepository;
-    private BicicletaRepository bicicletaRepository;
+
+    /*@Autowired
+    private EmpresaRepository empresaRepository;*/
     @Autowired
     private EmpresaService empresaService;
 
@@ -26,28 +27,8 @@ public class EmpresaController {
     @PutMapping("/empresas/{id}")
     public ResponseEntity<Empresa> updateEmpresaById(@PathVariable("id") Long id, @RequestBody Empresa empresa) {
 
-        Empresa foundEmpresa = empresaRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found Owner with id="+id));
-
-        if (empresa.getRuc()!=null)
-            foundEmpresa.setRuc(empresa.getRuc());
-        if (empresa.getNombre()!=null)
-            foundEmpresa.setNombre(empresa.getNombre());
-        if (empresa.getCorreo()!=null)
-            foundEmpresa.setCorreo(empresa.getCorreo());
-        if (empresa.getDireccion()!=null)
-            foundEmpresa.setDireccion(empresa.getDireccion());
-        if (empresa.getTelefono()!=null)
-            foundEmpresa.setTelefono(empresa.getTelefono());
-        if (empresa.getImagen()!=null)
-            foundEmpresa.setImagen(empresa.getImagen());
-
-        Empresa foundEmpresa1 = empresaRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
-        foundEmpresa1.setBicicletas(null);
-
-        Empresa updatedEmpresa = empresaService.updateEmpresaByIdS(foundEmpresa);
-        return new ResponseEntity<Empresa>(updatedEmpresa, HttpStatus.OK);
+        Empresa foundEmpresa = empresaService.updateEmpresaByIdS(id, empresa);
+        return new ResponseEntity<Empresa>(foundEmpresa, HttpStatus.OK);
 
         /*
         Empresa foundEmpresa = empresaRepository.findById(id).
@@ -65,6 +46,10 @@ public class EmpresaController {
             foundEmpresa.setTelefono(empresa.getTelefono());
         if (empresa.getImagen()!=null)
             foundEmpresa.setImagen(empresa.getImagen());
+
+        Empresa foundEmpresa1 = empresaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Alquiler with id="+id));
+        foundEmpresa1.setBicicletas(null);
 
         Empresa updatedEmpresa = empresaRepository.save(foundEmpresa);
         return new ResponseEntity<Empresa>(updatedEmpresa, HttpStatus.OK);

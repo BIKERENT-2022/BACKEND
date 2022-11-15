@@ -9,8 +9,9 @@ import pe.com.bikerent.backend.entities.Cliente;
 import java.util.List;
 
 public interface ClienteService {
-    public Cliente updateClienteByIdS(Cliente foundCliente);
+    public Cliente updateClienteByIdS(Long id, Cliente cliente);
     public void deleteClienteByIdS(Long id);
+    public List<Cliente> getAllClientesS();
     public List<Cliente> getAllClientesAndAlquileresS();
     public Cliente getClienteByIdS(Long id);
     public List<Cliente> getClienteByDireccionS(String direccion);

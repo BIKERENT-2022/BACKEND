@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface DeliveryService {
     public Delivery createDeliveryS(Delivery delivery);
-    public Delivery updateDeliveryByIdS(Delivery foundDelivery);
+    public Delivery updateDeliveryByIdS(Long id, Delivery delivery);
     public List<Delivery> getAllDeliveriesS();
     public Delivery getDeliveryByIdS(Long id);
     public List<Delivery> getALLDeliveriesByRepartidorS(String repartidor);

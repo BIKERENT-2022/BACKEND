@@ -30,7 +30,19 @@ public class TarjetaServiceImpl implements TarjetaService {
     }
 
     @Transactional
-    public Tarjeta updateTarjetaByIdS(Tarjeta foundTarjeta){
+    public Tarjeta updateTarjetaByIdS(Long id, Tarjeta tarjeta){
+        Tarjeta foundTarjeta = tarjetaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Tarjeta with id="+id));
+
+        if (tarjeta.getNumero()!=null)
+            foundTarjeta.setNumero(tarjeta.getNumero());
+        if (tarjeta.getNombreCompleto()!=null)
+            foundTarjeta.setNombreCompleto(tarjeta.getNombreCompleto());
+        if (tarjeta.getFechaCaducidad()!=null)
+            foundTarjeta.setFechaCaducidad(tarjeta.getFechaCaducidad());
+        if (tarjeta.getCvv()!=null)
+            foundTarjeta.setCvv(tarjeta.getCvv());
+
         Tarjeta updatedTarjeta = tarjetaRepository.save(foundTarjeta);
         return updatedTarjeta;
     }

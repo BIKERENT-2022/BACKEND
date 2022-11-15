@@ -13,11 +13,13 @@ import pe.com.bikerent.backend.services.TarjetaService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class TarjetaController {
-    @Autowired
-    private TarjetaRepository tarjetaRepository;
+
+    /*@Autowired
+    private TarjetaRepository tarjetaRepository;*/
     @Autowired
     private TarjetaService tarjetaService;
 
@@ -52,20 +54,8 @@ public class TarjetaController {
     @PutMapping("/tarjetas/{id}")
     public ResponseEntity<Tarjeta> updateTarjetaById(@PathVariable("id") Long id, @RequestBody Tarjeta tarjeta) {
 
-        Tarjeta foundTarjeta = tarjetaRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found Tarjeta with id="+id));
-
-        if (tarjeta.getNumero()!=null)
-            foundTarjeta.setNumero(tarjeta.getNumero());
-        if (tarjeta.getNombreCompleto()!=null)
-            foundTarjeta.setNombreCompleto(tarjeta.getNombreCompleto());
-        if (tarjeta.getFechaCaducidad()!=null)
-            foundTarjeta.setFechaCaducidad(tarjeta.getFechaCaducidad());
-        if (tarjeta.getCvv()!=null)
-            foundTarjeta.setCvv(tarjeta.getCvv());
-
-        Tarjeta updatedTarjeta = tarjetaService.updateTarjetaByIdS(foundTarjeta);
-        return new ResponseEntity<Tarjeta>(updatedTarjeta, HttpStatus.OK);
+        Tarjeta foundTarjeta = tarjetaService.updateTarjetaByIdS(id, tarjeta);
+        return new ResponseEntity<Tarjeta>(foundTarjeta, HttpStatus.OK);
 
         /*
         Tarjeta foundTarjeta = tarjetaRepository.findById(id).

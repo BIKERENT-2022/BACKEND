@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface BicicletaService {
     public Bicicleta createBicicletaS(Bicicleta bicicleta);
-    public Bicicleta updatebicicletasByIdS(Bicicleta foundBicicleta);
+    public Bicicleta updatebicicletasByIdS(Long id, Bicicleta bicicleta);
     public void deleteBicicletaByIdS(Long id);
     public List<Bicicleta> getAllBicicletasS();
     public Bicicleta getBicicletaByIdS(Long id);

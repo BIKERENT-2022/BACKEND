@@ -9,7 +9,7 @@ import java.util.List;
 public interface AlquilerService {
 
     public Alquiler createAlquilerS(Alquiler alquiler);
-    public Alquiler updateAlquilerByIdS(Alquiler foundCliente);
+    public Alquiler updateAlquilerByIdS(Long id, Alquiler alquiler);
     public void deleteAlquilerByIdS(Long id);
     public List<Alquiler> getAllAlquileresS();
     public Alquiler getAlquilerByIdS(Long id);

@@ -13,11 +13,13 @@ import pe.com.bikerent.backend.services.SuscripcionService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class SuscripcionController {
-    @Autowired
-    private SuscripcionesRepository suscripcionesRepository;
+
+    /*@Autowired
+    private SuscripcionesRepository suscripcionesRepository;*/
     @Autowired
     private SuscripcionService suscripcionService;
 
@@ -55,22 +57,8 @@ public class SuscripcionController {
     @PutMapping("/suscripciones/{id}")
     public ResponseEntity<Suscripcion> updateSuscripcionById(@PathVariable("id") Long id,@RequestBody Suscripcion suscripcion) {
 
-        Suscripcion foundSuscripcion = suscripcionesRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found suscripcion with id="+id));
-
-        if (suscripcion.getUsuario()!=null)
-            foundSuscripcion.setUsuario(suscripcion.getUsuario());
-        if (suscripcion.getTarjeta()!=null)
-            foundSuscripcion.setTarjeta(suscripcion.getTarjeta());
-        if (suscripcion.getPlan()!=null)
-            foundSuscripcion.setPlan(suscripcion.getPlan());
-        if (suscripcion.getFechaInicio()!=null)
-            foundSuscripcion.setFechaInicio(suscripcion.getFechaInicio());
-        if (suscripcion.getFechaFin()!=null)
-            foundSuscripcion.setFechaFin(suscripcion.getFechaFin());
-
-        Suscripcion updatedSuscripcion = suscripcionService.updateSuscripcionByIdS(foundSuscripcion);
-        return new ResponseEntity<Suscripcion>(updatedSuscripcion, HttpStatus.OK);
+        Suscripcion foundSuscripcion = suscripcionService.updateSuscripcionByIdS(id, suscripcion);
+        return new ResponseEntity<Suscripcion>(foundSuscripcion, HttpStatus.OK);
 
         /*
         Suscripcion foundSuscripcion = suscripcionesRepository.findById(id).

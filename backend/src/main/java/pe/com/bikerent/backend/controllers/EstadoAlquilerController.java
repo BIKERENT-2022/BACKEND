@@ -13,6 +13,7 @@ import pe.com.bikerent.backend.services.EstadoAlquilerService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class EstadoAlquilerController {

@@ -15,42 +15,24 @@ import pe.com.bikerent.backend.services.ClienteService;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class ClienteController {
 
-    @Autowired
-    private ClienteRepository clienteRepository;
+    /*@Autowired
+    private ClienteRepository clienteRepository;*/
     @Autowired
     private ClienteService clienteService;
 
 
     /*----------------------------------------------------- ACTUALIZAR CLIENTE -----------------------------------------------------*/
     @PutMapping("/clientes/{id}")
-    public ResponseEntity<Cliente> updateClienteById(@PathVariable("id") Long id, @RequestBody Cliente cliente) {
+    public ResponseEntity<Cliente> updateClienteById(@PathVariable("id") Long id, @RequestBody Cliente cliente)
+    {
 
-        Cliente foundCliente = clienteRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found Cliente with id="+id));
-
-        if (cliente.getDni()!=null)
-            foundCliente.setDni(cliente.getDni());
-        if (cliente.getNombre()!=null)
-            foundCliente.setNombre(cliente.getNombre());
-        if (cliente.getCorreo()!=null)
-            foundCliente.setCorreo(cliente.getCorreo());
-        if (cliente.getDireccion()!=null)
-            foundCliente.setDireccion(cliente.getDireccion());
-        if (cliente.getTelefono()!=null)
-            foundCliente.setTelefono(cliente.getTelefono());
-        if (cliente.getImagen()!=null)
-            foundCliente.setImagen(cliente.getImagen());
-
-        Cliente foundCliente1 = clienteRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
-        foundCliente1.setAlquileres(null);
-
-        Cliente updatedCliente = clienteService.updateClienteByIdS(foundCliente);
-        return new ResponseEntity<Cliente>(updatedCliente, HttpStatus.OK);
+        Cliente foundCliente = clienteService.updateClienteByIdS(id, cliente);
+        return new ResponseEntity<Cliente>(foundCliente, HttpStatus.OK);
 
         /*
         Cliente foundCliente = clienteRepository.findById(id).
@@ -91,18 +73,23 @@ public class ClienteController {
     /*----------------------------------------------------- LISTAS CLIENTES -----------------------------------------------------*/
     @GetMapping("/clientes")
     public ResponseEntity<List<Cliente>> getAllClientes(){
+
+        List<Cliente> clientes = clienteService.getAllClientesS();
+        if(clientes.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<List<Cliente>>(clientes,HttpStatus.OK);
+
+        /*
         List<Cliente> clientes = clienteRepository.findAll();
         if(clientes.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         for (Cliente c : clientes) {
             c.setAlquileres(null);
-            //for (Bicicleta b : c.getBicicletas()) {
-                //b.setAlquileres(null);
-              //  b.setEmpresa(null);
-            //}
         }
         return new ResponseEntity<List<Cliente>>(clientes,HttpStatus.OK);
+        */
     }
 
 

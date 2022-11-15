@@ -18,7 +18,27 @@ public class ClienteServiceImpl implements ClienteService {
     ClienteRepository clienteRepository;
 
     @Transactional
-    public Cliente updateClienteByIdS(Cliente foundCliente){
+    public Cliente updateClienteByIdS(Long id, Cliente cliente){
+        Cliente foundCliente = clienteRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Cliente with id="+id));
+
+        if (cliente.getDni()!=null)
+            foundCliente.setDni(cliente.getDni());
+        if (cliente.getNombre()!=null)
+            foundCliente.setNombre(cliente.getNombre());
+        if (cliente.getCorreo()!=null)
+            foundCliente.setCorreo(cliente.getCorreo());
+        if (cliente.getDireccion()!=null)
+            foundCliente.setDireccion(cliente.getDireccion());
+        if (cliente.getTelefono()!=null)
+            foundCliente.setTelefono(cliente.getTelefono());
+        if (cliente.getImagen()!=null)
+            foundCliente.setImagen(cliente.getImagen());
+
+        Cliente foundCliente1 = clienteRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
+        foundCliente1.setAlquileres(null);
+
         Cliente updatedCliente = clienteRepository.save(foundCliente);
         return updatedCliente;
     }
@@ -26,6 +46,14 @@ public class ClienteServiceImpl implements ClienteService {
     @Transactional
     public void deleteClienteByIdS(Long id){
         clienteRepository.deleteById(id);
+    }
+
+    public List<Cliente> getAllClientesS(){
+        List<Cliente> clientes = clienteRepository.findAll();
+        for (Cliente c : clientes) {
+            c.setAlquileres(null);
+        }
+        return clientes;
     }
 
     public List<Cliente> getAllClientesAndAlquileresS(){

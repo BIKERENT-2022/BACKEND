@@ -15,15 +15,14 @@ import pe.com.bikerent.backend.services.AlquilerService;
 import java.util.List;
 import java.util.function.ToLongFunction;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 
 public class AlquilerController {
 
-    @Autowired
-    private AlquilerRepository alquilerRepository;
-    @Autowired
-    private ClienteRepository clienteRepository;
+    /*@Autowired
+    private AlquilerRepository alquilerRepository;*/
     @Autowired
     private AlquilerService alquilerService;
 
@@ -64,32 +63,8 @@ public class AlquilerController {
     @PutMapping("/alquileres/{id}")
     public ResponseEntity<Alquiler> updateAlquilerById(@PathVariable("id") Long id, @RequestBody Alquiler alquiler) {
 
-        Alquiler foundCliente = alquilerRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found Alquiler with id="+id));
-
-        if (alquiler.getPlazo()!=null)
-            foundCliente.setPlazo(alquiler.getPlazo());
-        if (alquiler.getFecha()!=null)
-            foundCliente.setFecha(alquiler.getFecha());
-        if (alquiler.getHora()!=null)
-            foundCliente.setHora(alquiler.getHora());
-        if (alquiler.getCliente()!=null)
-            foundCliente.setCliente(alquiler.getCliente());
-        if (alquiler.getBicicleta()!=null)
-            foundCliente.setBicicleta(alquiler.getBicicleta());
-        if (alquiler.getEstadoAlquiler()!=null)
-            foundCliente.setEstadoAlquiler(alquiler.getEstadoAlquiler());
-        if (alquiler.getDelivery()!=null)
-            foundCliente.setDelivery(alquiler.getDelivery());
-
-        Alquiler foundCliente1 = alquilerRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found Alquiler with id="+id));
-        foundCliente1.getCliente().setAlquileres(null);
-        foundCliente1.getBicicleta().setEmpresa(null);
-        foundCliente1.getBicicleta().setAlquileres(null);
-
-        Alquiler updatedAlquiler = alquilerService.updateAlquilerByIdS(foundCliente);
-        return new ResponseEntity<Alquiler>(updatedAlquiler, HttpStatus.OK);
+        Alquiler foundCliente = alquilerService.updateAlquilerByIdS(id, alquiler);
+        return new ResponseEntity<Alquiler>(foundCliente, HttpStatus.OK);
 
         /*
         Alquiler foundCliente = alquilerRepository.findById(id).

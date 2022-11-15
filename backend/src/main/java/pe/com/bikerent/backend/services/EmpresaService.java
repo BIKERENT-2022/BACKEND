@@ -9,7 +9,7 @@ import pe.com.bikerent.backend.entities.Empresa;
 import java.util.List;
 
 public interface EmpresaService {
-    public Empresa updateEmpresaByIdS(Empresa foundEmpresa);
+    public Empresa updateEmpresaByIdS(Long id, Empresa empresa);
     public void deleteEmpresaByIdS(Long id);
     public Empresa getEmpresaByIdS(Long id);
     public List<Empresa> getAllEmpresasS();

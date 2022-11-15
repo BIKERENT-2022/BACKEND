@@ -49,8 +49,18 @@ public class UsuarioServiceImpl implements UsuarioService {
 
 
     @Transactional
-    public Usuario updateUsuarioByIdS(Usuario usuario){
-        Usuario updatedUsuario = usuarioRepository.save(usuario);
+    public Usuario updateUsuarioByIdS(Long id, Usuario usuario){
+        Usuario foundUsuario = usuarioRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Owner with id="+id));
+
+        if (usuario.getUsuario()!=null)
+            foundUsuario.setUsuario(usuario.getUsuario());
+        if (usuario.getContrasenia()!=null)
+            foundUsuario.setContrasenia(usuario.getContrasenia());
+        if (usuario.getTipo_usuario()!=null)
+            new ResourceNotFoundException("No se puede cambiar esta variable perteneciente al id="+id);
+
+        Usuario updatedUsuario = usuarioRepository.save(foundUsuario);
         return updatedUsuario;
     }
 

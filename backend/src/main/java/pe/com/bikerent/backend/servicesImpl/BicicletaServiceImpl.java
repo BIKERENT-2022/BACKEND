@@ -31,7 +31,27 @@ public class BicicletaServiceImpl implements BicicletaService {
     }
 
     @Transactional
-    public Bicicleta updatebicicletasByIdS(Bicicleta foundBicicleta){
+    public Bicicleta updatebicicletasByIdS(Long id, Bicicleta bicicleta){
+        Bicicleta foundBicicleta = bicicletaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
+
+        if (bicicleta.getModelo()!=null)
+            foundBicicleta.setModelo(bicicleta.getModelo());
+        if (bicicleta.getMarca()!=null)
+            foundBicicleta.setMarca(bicicleta.getMarca());
+        if (bicicleta.getColor()!=null)
+            foundBicicleta.setColor(bicicleta.getColor());
+        if (bicicleta.getTipo()!=null)
+            foundBicicleta.setTipo(bicicleta.getTipo());
+        if (bicicleta.getImagen()!=null)
+            foundBicicleta.setImagen(bicicleta.getImagen());
+        if (bicicleta.getEmpresa()!=null)
+            foundBicicleta.setEmpresa(bicicleta.getEmpresa());
+
+        Bicicleta foundBicicleta1 = bicicletaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
+        foundBicicleta1.setAlquileres(null);
+
         Bicicleta updatedBicicleta = bicicletaRepository.save(foundBicicleta);
         return updatedBicicleta;
     }

@@ -31,7 +31,21 @@ public class SuscripcionServiceImpl implements SuscripcionService {
     }
 
     @Transactional
-    public Suscripcion updateSuscripcionByIdS(Suscripcion foundSuscripcion){
+    public Suscripcion updateSuscripcionByIdS(Long id, Suscripcion suscripcion){
+        Suscripcion foundSuscripcion = suscripcionesRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found suscripcion with id="+id));
+
+        if (suscripcion.getUsuario()!=null)
+            foundSuscripcion.setUsuario(suscripcion.getUsuario());
+        if (suscripcion.getTarjeta()!=null)
+            foundSuscripcion.setTarjeta(suscripcion.getTarjeta());
+        if (suscripcion.getPlan()!=null)
+            foundSuscripcion.setPlan(suscripcion.getPlan());
+        if (suscripcion.getFechaInicio()!=null)
+            foundSuscripcion.setFechaInicio(suscripcion.getFechaInicio());
+        if (suscripcion.getFechaFin()!=null)
+            foundSuscripcion.setFechaFin(suscripcion.getFechaFin());
+
         Suscripcion updatedSuscripcion = suscripcionesRepository.save(foundSuscripcion);
         return updatedSuscripcion;
     }

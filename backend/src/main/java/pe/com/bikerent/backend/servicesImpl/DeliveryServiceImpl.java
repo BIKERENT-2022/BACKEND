@@ -32,7 +32,26 @@ public class DeliveryServiceImpl implements DeliveryService {
     }
 
     @Transactional
-    public Delivery updateDeliveryByIdS(Delivery foundDelivery){
+    public Delivery updateDeliveryByIdS(Long id, Delivery delivery){
+        Delivery foundDelivery = deliveryRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found delivery with id="+id));
+
+        if (delivery.getRepartidor()!=null)
+            foundDelivery.setRepartidor(delivery.getRepartidor());
+        if (delivery.getFecha_envio()!=null)
+            foundDelivery.setFecha_envio(delivery.getFecha_envio());
+        if (delivery.getFecha_recojo()!=null)
+            foundDelivery.setFecha_recojo(delivery.getFecha_recojo());
+        if (delivery.getHora_envio()!=null)
+            foundDelivery.setHora_envio(delivery.getHora_envio());
+        if (delivery.getHora_recojo()!=null)
+            foundDelivery.setHora_recojo(delivery.getHora_recojo());
+        if (delivery.getDireccion_envio()!=null)
+            foundDelivery.setDireccion_envio(delivery.getDireccion_envio());
+        if (delivery.getDireccion_recojo()!=null)
+            foundDelivery.setDireccion_recojo(delivery.getDireccion_recojo());
+
+
         Delivery updatedDelivery = deliveryRepository.save(foundDelivery);
         return updatedDelivery;
     }

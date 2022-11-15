@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface TarjetaService {
     public Tarjeta createTarjetaS(Tarjeta tarjeta);
-    public Tarjeta updateTarjetaByIdS(Tarjeta foundTarjeta);
+    public Tarjeta updateTarjetaByIdS(Long id, Tarjeta tarjeta);
     public List<Tarjeta> getAllTarjetasS();
     public Tarjeta getTarjetaByIdS(Long id);
 }

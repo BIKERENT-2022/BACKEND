@@ -14,13 +14,14 @@ import pe.com.bikerent.backend.repositories.UsuarioRepository;
 import pe.com.bikerent.backend.services.BicicletaService;
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class BicicletaController {
-    @Autowired
+    /*@Autowired
     private BicicletaRepository bicicletaRepository;
     @Autowired
-    private EmpresaRepository empresaRepository;
+    private EmpresaRepository empresaRepository;*/
     @Autowired
     private BicicletaService bicicletaService;
 
@@ -57,28 +58,8 @@ public class BicicletaController {
     @PutMapping("/bicicletas/{id}")
     public ResponseEntity<Bicicleta> updatebicicletasById(@PathVariable("id") Long id, @RequestBody Bicicleta bicicleta) {
 
-        Bicicleta foundBicicleta = bicicletaRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
-
-        if (bicicleta.getModelo()!=null)
-            foundBicicleta.setModelo(bicicleta.getModelo());
-        if (bicicleta.getMarca()!=null)
-            foundBicicleta.setMarca(bicicleta.getMarca());
-        if (bicicleta.getColor()!=null)
-            foundBicicleta.setColor(bicicleta.getColor());
-        if (bicicleta.getTipo()!=null)
-            foundBicicleta.setTipo(bicicleta.getTipo());
-        if (bicicleta.getImagen()!=null)
-            foundBicicleta.setImagen(bicicleta.getImagen());
-        if (bicicleta.getEmpresa()!=null)
-            foundBicicleta.setEmpresa(bicicleta.getEmpresa());
-
-        Bicicleta foundBicicleta1 = bicicletaRepository.findById(id).
-                orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
-        foundBicicleta.setAlquileres(null);
-
-        Bicicleta updatedBicicleta = bicicletaService.updatebicicletasByIdS(foundBicicleta);
-        return new ResponseEntity<Bicicleta>(updatedBicicleta, HttpStatus.OK);
+        Bicicleta foundBicicleta = bicicletaService.updatebicicletasByIdS(id, bicicleta);
+        return new ResponseEntity<Bicicleta>(foundBicicleta, HttpStatus.OK);
 
         /*
         Bicicleta foundBicicleta = bicicletaRepository.findById(id).
@@ -99,7 +80,7 @@ public class BicicletaController {
 
         Bicicleta foundBicicleta1 = bicicletaRepository.findById(id).
                 orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));
-        foundBicicleta.setAlquileres(null);
+        foundBicicleta1.setAlquileres(null);
 
         Bicicleta updatedBicicleta = bicicletaRepository.save(foundBicicleta);
         return new ResponseEntity<Bicicleta>(updatedBicicleta, HttpStatus.OK);

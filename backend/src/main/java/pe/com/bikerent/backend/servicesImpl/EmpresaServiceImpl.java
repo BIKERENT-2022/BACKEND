@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import pe.com.bikerent.backend.entities.Alquiler;
 import pe.com.bikerent.backend.entities.Bicicleta;
 import pe.com.bikerent.backend.entities.Empresa;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
@@ -18,7 +19,27 @@ public class EmpresaServiceImpl implements EmpresaService {
     @Autowired
     EmpresaRepository empresaRepository;
 
-    public Empresa updateEmpresaByIdS(Empresa foundEmpresa){
+    public Empresa updateEmpresaByIdS(Long id, Empresa empresa){
+        Empresa foundEmpresa = empresaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Owner with id="+id));
+
+        if (empresa.getRuc()!=null)
+            foundEmpresa.setRuc(empresa.getRuc());
+        if (empresa.getNombre()!=null)
+            foundEmpresa.setNombre(empresa.getNombre());
+        if (empresa.getCorreo()!=null)
+            foundEmpresa.setCorreo(empresa.getCorreo());
+        if (empresa.getDireccion()!=null)
+            foundEmpresa.setDireccion(empresa.getDireccion());
+        if (empresa.getTelefono()!=null)
+            foundEmpresa.setTelefono(empresa.getTelefono());
+        if (empresa.getImagen()!=null)
+            foundEmpresa.setImagen(empresa.getImagen());
+
+        Empresa foundEmpresa1 = empresaRepository.findById(id).
+                orElseThrow(()->new ResourceNotFoundException("Not found Alquiler with id="+id));
+        foundEmpresa1.setBicicletas(null);
+
         Empresa updatedEmpresa = empresaRepository.save(foundEmpresa);
         return updatedEmpresa;
     }
