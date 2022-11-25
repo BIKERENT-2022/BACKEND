@@ -1,0 +1,185 @@
+<body>
+    <app-navbar></app-navbar>
+    <div class="container contenedor-bicicletas">
+        <div class="row">
+            <div class="col-lg-3">                                                                  <!--Primera columna-->
+                <button class="button-back"><i class="bi bi-arrow-left"></i></button>
+                <div class="row-filtros">
+                    <div class="row row-primera"> <!--filtros título-->
+                        <p><i class="fa-solid fa-sliders"></i> Filtro de búsqueda</p>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row" style="margin-left:20%;">
+                                <p class="mg-bot">Marca</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" style="text-align:right; padding-right:0;">
+                                    <button class="search-button" type="submit"><i class="bi bi-search"></i></button>
+                                </div>
+                                <div class="col">
+                                    <input class="search-box mg-bot" type="text" placeholder="Buscar">
+                                </div>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck1" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck1" style="margin-left:10px;"> MBC bikes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck2" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck2" style="margin-left:10px;"> Cannodale</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--precio-->
+                                <p class="mg-bot">Precio</p>
+                            </div>
+                            <div class="row range-line">
+                                <input type="range" class="form-range" id="customRange1">
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--color-->
+                                <p class="mg-bot">Color</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" style="text-align:right; padding-right:0;">
+                                    <button class="search-button" type="submit"><i class="bi bi-search"></i></button>
+                                </div>
+                                <div class="col">
+                                    <input class="search-box mg-bot" type="text" placeholder="Buscar">
+                                </div>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck3" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck3" style="margin-left:10px;"> Azul</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck4" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck4" style="margin-left:10px;"> Celeste</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--Modelos-->
+                                <p class="mg-bot">Modelos</p>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck5" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck5" style="margin-left:10px;"> Eléctricas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck6" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck6" style="margin-left:10px;"> Montañeras</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-center">
+                                <button class="button-filtros">Aplicar filtros</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">                                                  <!--Segunda columna-->
+                <div class="row">
+                    <div class="col-6">
+                        <h1><b>Modelos</b></h1> <!--modelos titulo-->
+                    </div>
+                    <div class="col-6 search-div">
+                        <button class="search-button" type="submit"><i class="bi bi-search"></i></button>
+                        <input class="search-box" type="text" placeholder="Mini BMX" style="border-radius: 15px;">
+                    </div>
+                </div>
+                <div class="row row-modelos-search"> <!--imagenes bicicletas-->
+                    <div class="row">
+                        <p class="text-resultados">13 resultados encontrados en San Miguel</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 button-img">
+                            <div class="img-bmx-1 bicicleta-img-search"></div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p class="text-img-icon"><i class="fa-solid fa-location-dot"></i></p>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row"><p class="text-img-nom">BMX Original</p></div>
+                                    <div class="row"><p class="text-img-ubi">San Miguel, Lima</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 button-img">
+                            <a routerLink="/minibmxx"> <div class="img-minibmx bicicleta-img-search"></div></a>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p class="text-img-icon"><i class="fa-solid fa-location-dot"></i></p>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row"><a routerLink="/minibmxx" class="text-img-nom text-dark text-decoration-none" >Mini BMX</a></div>
+                                    <div class="row"><p class="text-img-ubi">San Miguel, Lima</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 button-img">
+                            <a routerLink="/minibmxx"> <div class="img-minibmx-mirror bicicleta-img-search"></div></a>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p class="text-img-icon"><i class="fa-solid fa-location-dot"></i></p>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row"><a routerLink="/minibmxx" class="text-img-nom text-dark text-decoration-none">Mini BMX</a></div>
+                                    <div class="row"><p class="text-img-ubi">San Miguel, Lima</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 button-img">
+                            <div class="img-bmx bicicleta-img-search"></div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p class="text-img-icon"><i class="fa-solid fa-location-dot"></i></p>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row"><a class="text-img-nom text-decoration-none">BMX Original</a></div>
+                                    <div class="row"><p class="text-img-ubi">San Miguel, Lima</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 button-img">
+                            <a routerLink="/minibmxx"> <div class="img-minibmx bicicleta-img-search"></div></a>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p class="text-img-icon"><i class="fa-solid fa-location-dot"></i></p>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row"><a routerLink="/minibmxx" class="text-img-nom text-dark text-decoration-none">Mini BMX</a></div>
+                                    <div class="row"><p class="text-img-ubi">San Miguel, Lima</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 button-img">
+                            <div class="img-bmx bicicleta-img-search"></div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <p class="text-img-icon"><i class="fa-solid fa-location-dot"></i></p>
+                                </div>
+                                <div class="col-9">
+                                    <div class="row"><a class="text-img-nom text-decoration-none">BMX Original</a></div>
+                                    <div class="row"><p class="text-img-ubi">San Miguel, Lima</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!--style="background-color:red"-->
+    </div>
+    
+</body>

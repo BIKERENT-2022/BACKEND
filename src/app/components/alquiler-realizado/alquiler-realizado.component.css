@@ -1,0 +1,58 @@
+
+.pedidos-activos{
+    width: 900px;
+    height: 300px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.title {    
+    font-size: 30px;
+    font-weight:bold;
+    margin: 20px;
+    color:#00D0D0;
+    padding-top: 100px;
+    padding-left: 19.5%;
+}
+
+.row {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 70px;
+}
+h6 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+i{
+    font-size: 50px;
+    color:black;
+}
+.bg-color
+{
+    background-color: #C4C4C4;;
+}
+
+.inf{ 
+    position: absolute;
+    top: 50%;
+    left: 50%;       
+    margin-top: -220px;
+    margin-left: -450px; 
+}
+.act
+{
+    font-size: 18px;
+    color:#00D0D0;
+}
+
+.btn
+{
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    align-self: auto;
+}

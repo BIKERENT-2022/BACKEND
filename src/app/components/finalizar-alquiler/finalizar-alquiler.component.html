@@ -1,0 +1,84 @@
+<body>
+    <div class="container align-items-center">
+        <div class="row"> <!--flecha back-->
+            <div class="col">
+                <button class="button-back-carrito"><i class="fa-solid fa-angle-left"></i></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10 contenedor-carrito">
+                <div class="row">
+                    <p class="title-carrito">Tu pedido</p>
+                </div>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-8 product-box">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="img-minibmx img-minibmx-carrito"></div>
+                            </div>
+                            <div class="col-6">
+                                <p class="txt-mini-bmx">Mini BMX</p>
+                            </div>
+                            <div class="col-3">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <button class="button-mp">-</button>
+                                        <p class="txt-number"> 1 </p>
+                                        <button class="button-mp">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row actualizar-box-fin-a" style="margin-top: 80px;">
+                    <p class="text-total">Total del carrito</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <p class="text-envio">Envío:</p>
+                    </div>
+                    <div class="col-6"> <!--Checks-->
+                        <div class="row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexCheck1" checked>
+                                <label class="form-check-label" for="flexCheck1">Envío estándar (hasta 1 hora) PLAN BASIC</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexCheck2">
+                                <label class="form-check-label" for="flexCheck2">Envío express (hasta 30 minutos) PLAN PREMIUM</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <div class="button-center" style="text-align: center;">
+                        <button type="button" class="btn btn-outline-info mx-auto col-2" data-bs-toggle="modal" data-bs-target="#notVerPedido" >Solicitar Alquiler</button>
+                    </div>
+                
+                    <!-- Modal -->
+                    <div class="modal fade" id="notVerPedido" tabindex="-1" aria-labelledby="notVerPedidoLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header text-center">
+                            <h5 class="modal-title " id="notVerPedidoLabel">Alquiler realizado con éxito.<br>Nos estaremos comunicando lo más pronto posible</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="./../../assets/imgs/Bikerent_logo.PNG" class="img-fluid img-thumbnail" alt="Mensaje">
+                            </div>
+                            <div class="modal-footer">
+                            <a > <button routerLink="/verPedido" type="button" class="btn btn-outline-info" data-bs-dismiss="modal" >Ver pedido</button> </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                </div>            
+            </div>
+        </div>
+    </div>
+</body>

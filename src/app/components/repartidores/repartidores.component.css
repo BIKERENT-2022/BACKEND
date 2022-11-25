@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+.titulo h1{
+    font-weight: bold;
+    color:#00D0D0;
+    font-size: 50px;
+}
+
+.cuadro{
+    width: 100%;
+    text-align: right;
+}
+
+p{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.a{
+    display: flex;
+    justify-content: center;
+}
+
+.cajagris{
+    width: 90%;
+    height: auto;
+}
+
+.mat-form-field {
+    font-size: 15px;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    border: 1px solid rgb(180, 180, 180);
+
+}
+
+.mat-paginator{
+    width: 100%;
+    margin: auto;
+}
+
+.mat-header-cell {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: darkgrey;
+    border-right: 1px solid currentColor;
+    padding-left: 10px;
+}
+
+.mat-cell {
+    font-size: 17px;
+    border-right: 1px solid rgb(180, 180, 180);
+    padding-left: 10px;
+}
+
+.table-scroll {
+    max-height: 500px;
+    overflow-y: scroll;
+}

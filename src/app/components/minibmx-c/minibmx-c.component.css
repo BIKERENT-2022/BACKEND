@@ -1,0 +1,196 @@
+/***** Bicicletas *****/
+
+.bi-arrow-left {
+    font-size: 33px;
+}
+
+.contenedor-bicicletas {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+
+.button-back { 
+    background-color: white;
+    border:none;
+    margin-bottom: 4px;
+}
+
+.button-back:active {
+    opacity: 70%;
+}
+
+.search-div {
+    /*border:1px solid black;*/
+    text-align:right;
+    padding-top:10px;
+    font-size:15px;
+    margin-bottom: 17px;
+}
+
+.search-button {
+    background-color: white;
+    font-size:18px;
+    border:none;
+    
+}
+
+.search-button:active {
+    opacity: 70%;
+}
+
+.search-box {
+    padding: 0 10px;
+    width: 175px;
+    margin-right: 0;
+}
+
+.row-filtros {
+    border: 1px solid black;
+    padding-top: 10px;
+    
+}
+
+.row-modelos {
+    border: 1px solid black;
+    padding: 20px 20px;
+}
+
+.row-primera {
+    font-size: 25px;
+    text-align: center;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.line {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 1px;
+    width: 80%;
+    background-color: rgb(170, 170, 170);
+}
+
+.range-line{
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
+
+.button-center {
+    text-align: center;
+}
+
+.button-filtros {
+    background-color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.button-filtros:active {
+    opacity: 70%;
+}
+
+.bicicleta-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 80px 80px;
+    margin: 20px 20px;
+    cursor: pointer;
+}
+
+.button-img:active {
+    opacity: 70%;
+}
+
+.bicicleta-img:active {
+    opacity: 70%;
+}
+
+.text-img {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mg-bot {
+    margin-bottom: 5px;
+}
+
+/*****Mini BMX*****/
+.img-minibmx {
+    background-image: url(../../../assets/imgs/img-mini-bmx.png);
+}
+
+.img-minibmx-deta {
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 80px 80px;
+    margin:auto;
+    margin-left: 10%;
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+
+.bmx-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #00D0D0;
+    text-align: center;
+}
+
+.iconos-form {
+    font-size: 17px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.text-iconos {
+    font-size: 10px;
+    text-align: center;
+    color:rgb(67, 67, 67);
+    cursor: pointer;
+}
+
+.button-icon:active {
+    opacity: 70%;
+}
+
+.horas-combobox {
+    width: 150px;
+}
+
+.img-bicicletas {
+    background-image: url(../../../assets/imgs/bicicletas-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 100px;
+    margin-left: 30px;
+}
+
+.box-detalles-producto {
+    border: 1px solid rgb(170, 170, 170);
+    border-left: none;
+    border-right: none;
+    width: 333px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.text-detalles-producto {
+    font-size: 25px;
+    color: rgb(125, 125, 125);
+}
+
+.text-detalles {
+    margin: 50px 0;
+    padding: 0 0;
+}

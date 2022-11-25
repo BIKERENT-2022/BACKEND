@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div id = "MyProfile " >
+    <div><h1 class="TitleProfile" > Mi Perfil </h1></div>
+    <div class = "cardprofile border border-dark">
+        <div class="container">
+            <div class="row">
+                <form [formGroup]="myForm" autocomplete="off">
+                <div class ="col-md-6 col-sm-12 datos "> <!--datos-->
+                        <img src ="{{getImagen()}}" class = "imgperfil" alt = "imgperfil">
+
+                        <a style="margin-left: 25%"> Modificar foto:</a><br>
+
+                        <input style="margin-left: 25%" class="border border-info" formControlName="imagen" type="imagen" name = "imagen" id = "imagen" placeholder="imagen.jpg">
+                        <br><br>
+                        
+                        <a style="margin-left: 25%"> Correo electrónico:</a><br>
+                        <input style="margin-left: 25%" class="border border-info" formControlName="correo" type="email" name = "email" id = "email" placeholder="alevalera@gmail.com">
+                    
+                    <br><br>
+
+                    <a style="margin-left: 25%"> Direcciones:</a><br>
+                        <input style="margin-left: 25%" class="border border-info" formControlName="direccion" type="text" name = "text" id = "direction" placeholder="Av. la Marina 2810">  
+                    
+                        <br><br><br><br>
+                    <a (click)="ContraseniaId()" style="cursor: pointer"> <p> Cambiar contraseña</p></a>
+                    <a> <p> Eliminar cuenta </p> </a>
+                    <a routerLink="/login"> <p> Cerrar sesión </p> </a>
+                </div>
+
+                <div class = "col-md-6 col-sm-12 datos ">
+                    <a> Nombre completo:</a><br>
+                        <input class="border border-info" formControlName="nombre" type="text" name = "text" id = "fullname" placeholder="Alexandra Valera"><br><br>
+                    <a> DNI: </a><br>
+                        <input class="border border-info" formControlName="dni" type="text" name = "number" id = "dni" placeholder="******"><br><br>                
+                    <a> Número de telefono:</a><br>
+                        <input class="border border-info" formControlName="telefono" type="tel" name = "tel" id = "phone" placeholder = "952784961">
+                    <br> <br>
+                    <button type="button" class="btn btn-info"  style="color:white" (click)="saveCliente()" > Editar</button> 
+                </div>
+            </form>
+            </div>
+        
+        </div>
+    </div>		  
+</div>

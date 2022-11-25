@@ -1,0 +1,72 @@
+<div class="content-login">
+    <div class="logo">
+            <img src = "./../../assets/imgs/Bikerent_logo.PNG">
+        </div>
+
+        <div class="titulo">
+            <h1>Iniciar sesión</h1>
+        </div>
+
+        <form  class = "cardlogin" onsubmit = "ValidarCampos(); return false">
+
+            <div [formGroup]="loginForm" (ngSubmit)="login()"class="cajas">
+                
+                <div class="a">
+
+                    <div class="form-floating mb-4">
+                        <input  formControlName = "usuario" type="text" class="form-control" id="floatingInput" placeholder="Usuario">
+                        <label for="floatingInput">Usuario</label>
+                    </div>
+
+                    <!--<<div class="mb-4">
+
+
+                        label for="formGroupExampleInput" class="form-label">Correo electrónico</label>
+                        //<input formControlName="CorreoElectronico" type="email" class="form-control" id="NameUser" placeholder="  nombre@ejemplo.com">
+                    </div>-->
+
+                </div>
+
+                <div class="a">
+
+                    <div class="form-floating mb-4">
+                        <input formControlName = "contrasenia" type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                        <label for="floatingPassword">Contraseña</label>
+                    </div>
+
+                    <!--<div class="mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Contraseña</label>
+                        <input formControlName="contrasenia" type="password" class="form-control" id="pwd" placeholder="  · · · · · · · · · ·">
+                    </div>-->
+
+                </div>
+            </div>
+
+            <div id="msg"> 
+                <!-- Mensajes de Verificación -->
+                <div id="campos_vacios" class="alert alert-warning ocultar" role="alert">
+                    Los campos están vacíos !!
+                </div>        
+                <!-- Fin Mensajes de Verificación -->
+            </div>
+
+
+            <div class="boton" >
+                <button type="submit" class="btn btn-outline-info" (click)="Confirmar()">Iniciar Sesión</button>
+            </div>
+
+        </form>
+
+        <p>O utiliza tu perfil de alguna red social</p>
+
+        <div class="tipo">
+            <button type="button" class="btn btn-outline-info" >Gmail</button>
+            <button type="button" class="btn btn-outline-info">Facebook</button>
+        </div>
+
+
+        <p class="text-muted">
+            <a class="text-reset" style="margin-right: 25px" routerLink="/cambiarContrasenia">¿Olvidaste tu contraseña?</a>
+            <a class="text-reset" style="margin-left: 25px" routerLink="/Registrate">Registrate</a>
+        </p>
+</div>

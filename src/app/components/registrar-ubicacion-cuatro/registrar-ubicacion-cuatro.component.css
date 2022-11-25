@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+p{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    color: gray;
+}
+
+.cajas{
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+.cajas input{
+    border: solid #00D0D0;
+    width: 500px;
+}
+.a{
+    display: flex;
+    justify-content: center;
+}
+
+
+.gris{
+    margin-left: 31%;
+    margin-right: 30%;
+    background-color: lightgrey;
+    border: dashed lightgrey;
+}
+
+.d{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.boton{
+    height: 50px;    
+    margin-bottom: 20px;
+}
+.btn-outline-info{
+    width: a;
+    font-weight: bold;
+    background-color: white;
+}
+
+.mapouter{
+    display: flex;
+    justify-content: center;
+
+}

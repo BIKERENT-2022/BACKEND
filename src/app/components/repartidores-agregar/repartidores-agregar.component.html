@@ -1,0 +1,69 @@
+<app-navbar-empresa></app-navbar-empresa>
+
+<div class="titulo">
+    <h1>Registrar Repartidor</h1>
+</div>
+    
+
+<div class="a">
+
+    <div class="cajagris" >
+
+        <form [formGroup]="myForm" class="example-form">
+    
+            <div class="b">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>nombre *</mat-label>
+                    <input formControlName = "nombre" matInput placeholder="nombre">
+                </mat-form-field>
+
+            </div>
+
+            <div class="b">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>apellido *</mat-label>
+                    <textarea formControlName = "apellido" matInput placeholder="apellido"></textarea>
+                </mat-form-field>
+                
+            </div>
+
+            <div class="b">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>dni *</mat-label>
+                    <input  formControlName = "dni" matInput placeholder="dni">
+                </mat-form-field>
+                
+            </div>
+
+            <div class="b">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>celular *</mat-label>
+                    <textarea  formControlName = "celular" matInput placeholder="celular"></textarea>
+                </mat-form-field>
+                
+            </div>
+
+            <div class="b">
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>correo *</mat-label>
+                    <textarea  formControlName = "correo" matInput placeholder="correo"></textarea>
+                </mat-form-field>
+                
+            </div>
+                
+                  
+            <div class="cuadro">        
+                <button mat-raised-button color="primary" type="button"(click)="saveRepartidor()">Registrar</button>
+                <button mat-raised-button color="primary" routerLink="/repartidores">Cancelar</button>
+            </div>
+      
+        </form>
+    
+    </div>
+
+</div>

@@ -1,0 +1,49 @@
+/*****HOME*****/
+.contenedor-HOME {
+    font-family: 'Roboto', sans-serif;
+    background: #E5E5E5;
+    text-align:center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.title-h {
+    margin-top: 2%;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+.descripcion-h {
+    font-size: 30px;
+}
+
+.btn-contactanos {
+    margin-top: 2%;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: white;
+    border-color: #00D0D0;
+    color: #00B2FF;
+    padding: 0 25px;
+    border-style: solid;
+}
+
+.btn-contactanos:active {
+    opacity: 70%;
+}
+
+.img-a {
+    height: 22.9%;
+    background-image:url(../../../assets/imgs/1b.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.img-b {
+    width: 100%;
+    height: 45%;
+    background-image:url(../../../assets/imgs/2b.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+}

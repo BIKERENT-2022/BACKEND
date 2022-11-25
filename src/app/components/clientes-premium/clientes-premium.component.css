@@ -1,0 +1,59 @@
+.title {    
+    font-size: 30px;
+    font-weight:bold;
+    margin-top: 1%;
+    margin-left: 1%;
+}
+
+.a{
+    /*margin-top: 1%;*/
+    display: flex;
+    justify-content: center;
+
+}
+.cajagris{
+    margin-top: 1%;
+    width: 90%;
+    padding: 2%;
+    height: auto;
+}
+
+
+
+.mat-header-cell {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: darkgrey;
+    border-right: 1px solid currentColor;
+    padding-left: 10px;
+}
+
+.mat-cell {
+    font-size: 17px;
+    border-right: 1px solid rgb(180, 180, 180);
+    padding-left: 10px;
+}
+
+table {
+    width: 100%;
+    margin: auto;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.mat-paginator{
+    width: 100%;
+    margin: auto;
+}
+
+.afiliados{
+    font-size: 25px;
+    color: #2cc0ff;
+    font-weight: bold;
+}
+
+.table-scroll {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+

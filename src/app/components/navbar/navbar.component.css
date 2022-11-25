@@ -1,0 +1,32 @@
+nav {
+    height: 80px;
+}
+
+.barra-navegacion {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+.icon-bg {
+    color:black;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size:28px;
+}
+.img-perfil {
+    background-image: url(../../../assets/imgs/usuario_cliente.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+}
+
+.button-navegacion {
+    border-bottom: 1.75px solid transparent;
+}
+
+.button-navegacion:hover {
+    border-bottom: 1.75px solid currentColor;
+}

@@ -1,0 +1,196 @@
+/***** Bicicletas *****/
+
+.bi-arrow-left {
+    font-size: 33px;
+}
+
+.contenedor-bicicletas {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
+}
+
+.button-back { 
+    background-color: white;
+    border:none;
+    margin-bottom: 4px;
+}
+
+.button-back:active {
+    opacity: 70%;
+}
+
+.search-div {
+    /*border:1px solid black;*/
+    text-align:right;
+    padding-top:10px;
+    font-size:15px;
+    margin-bottom: 17px;
+}
+
+.search-button {
+    background-color: white;
+    font-size:18px;
+    border:none;
+    
+}
+
+.search-button:active {
+    opacity: 70%;
+}
+
+.search-box {
+    padding: 0 10px;
+    width: 175px;
+    margin-right: 0;
+}
+
+.row-filtros {
+    border: 1px solid black;
+    padding-top: 10px;
+    
+}
+
+.row-modelos {
+    border: 1px solid black;
+    padding: 20px 20px;
+}
+
+.row-primera {
+    font-size: 25px;
+    text-align: center;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.line {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 1px;
+    width: 80%;
+    background-color: rgb(170, 170, 170);
+}
+
+.range-line{
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
+
+.button-center {
+    text-align: center;
+}
+
+.button-filtros {
+    background-color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.button-filtros:active {
+    opacity: 70%;
+}
+
+.bicicleta-img {
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 80px 80px;
+    margin: 20px 20px;
+    cursor: pointer;
+}
+
+.button-img:active {
+    opacity: 70%;
+}
+
+.bicicleta-img:active {
+    opacity: 70%;
+}
+
+.img-campera {
+    background-image: url(../../../assets/imgs/img-campera.png);
+}
+
+.img-montaniera {
+    background-image: url(../../../assets/imgs/img-montaniera.png);
+}
+
+.img-minibmx {
+    background-image: url(../../../assets/imgs/img-mini-bmx.png);
+}
+
+.img-bmx {
+    background-image: url(../../../assets/imgs/img-bmx.png);
+}
+
+.img-plegable {
+    background-image: url(../../../assets/imgs/img-plegable.png);
+}
+
+.img-electrica {
+    background-image: url(../../../assets/imgs/img-electrica.png);
+}
+
+.img-bmx-1 {
+    background-image: url(../../../assets/imgs/img-bmx-1.png);
+}
+
+.img-minibmx-mirror {
+    background-image: url(../../../assets/imgs/img-mini-bmx-mirror.png);
+}
+
+.text-img {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.mg-bot {
+    margin-bottom: 5px;
+}
+
+/*****Search*****/
+.text-resultados {
+    font-size: 15px;
+}
+
+.row-modelos-search {
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+}
+
+.bicicleta-img-search {
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 80px 80px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.text-img-icon {
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: right;
+}
+
+.text-img-nom {
+    color: rgb(149, 149, 149);
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.text-img-ubi {
+    font-size: 16px;
+    font-weight: bold;
+}
+

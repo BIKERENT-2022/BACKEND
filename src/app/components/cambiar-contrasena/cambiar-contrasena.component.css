@@ -1,0 +1,54 @@
+input {
+    border: 1.5px solid #00D0D0 !important;
+    border-radius: 0.2rem;
+    color:#00D0D0;
+    outline: none;
+    margin-bottom: 30px;
+}
+i {
+    font-size: 18px;
+}
+.cardprofile{
+	position: absolute;
+	width: 800px;
+	height: 500px;
+    top: 50%;
+    left: 50%;           
+    margin-top: -250px;
+    margin-left: -400px;          
+}
+.datos {
+	margin-left: 300px;
+	margin-top:90px;
+	width:200px;	
+}
+button{
+	justify-content: center; 
+    margin-top: -30px;  
+    margin-left: auto;
+}
+
+p {
+    font-weight: bold;
+}
+.alert{
+    width:170px;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 0;
+}
+.ocultar {
+    display: none;
+} 
+.mostrar {
+    display: block;  
+}
+span {    
+	position: absolute;
+    margin-top: -30px; 
+}
+.not_error{
+    color: red;
+    font-size: 12px;
+}

@@ -1,0 +1,201 @@
+<body>
+    <app-navbar-empresa></app-navbar-empresa>
+    <div class="container contenedor-bicicletas">
+        <div class="row">
+            <div class="col-lg-3">                                                                  <!--Primera columna-->
+                <button class="button-back"><i class="fa-solid fa-angle-left"></i></button>
+                <div class="row-filtros">
+                    <div class="row row-primera"> <!--filtros título-->
+                        <p><i class="fa-solid fa-sliders"></i> Filtro de búsqueda</p>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row" style="margin-left:20%;">
+                                <p class="mg-bot">Marca</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" style="text-align:right; padding-right:0;">
+                                    <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                                <div class="col">
+                                    <input class="search-box mg-bot" type="text" placeholder="Buscar">
+                                </div>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck1" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck1" style="margin-left:10px;"> MBC bikes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck2" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck2" style="margin-left:10px;"> Cannodale</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--precio-->
+                                <p class="mg-bot">Precio</p>
+                            </div>
+                            <div class="row range-line">
+                                <input type="range" class="form-range" id="customRange1">
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--color-->
+                                <p class="mg-bot">Color</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" style="text-align:right; padding-right:0;">
+                                    <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                                <div class="col">
+                                    <input class="search-box mg-bot" type="text" placeholder="Buscar">
+                                </div>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck3" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck3" style="margin-left:10px;"> Azul</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck4" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck4" style="margin-left:10px;"> Celeste</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--Modelos-->
+                                <p class="mg-bot">Modelos</p>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck5" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck5" style="margin-left:10px;"> Eléctricas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck6" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck6" style="margin-left:10px;"> Montañeras</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-center">
+                                <button class="button-filtros">Aplicar filtros</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">                                                  <!--Segunda columna-->
+                <div class="row">
+                    <div class="col search-div">
+                        <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <input class="search-box" type="text" placeholder="Search" style="border-radius: 15px;">
+                    </div>
+                </div>
+                <!--descripcion-->
+                <div class="row row-modelos"> 
+                    <div class="row">
+                        <div class="col-11">
+                            <p class="bmx-title">Editar modelo</p>
+                        </div>
+                        <div class="col-1 button-icon"> <!--CAMBIO-->
+                            <div class="row"><a href="" class="text-iconos text-decoration-none"><i class="bi bi-pencil-square" style="font-size: 30px;"></i></a></div>
+                        </div>
+                    </div>
+                    <!--primera col-->
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">                             
+                            <a class="btn fd-bolder col-11 text-start" data-bs-toggle="modal" data-bs-target="#staticBackdrop">                 
+                                <div class="row align-items-center">
+                                    <div class="row">
+                                        <img src="{{getImagen()}}">
+                                    </div>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                      <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">                                            
+                                            <div class="modal-body">
+                                                <img id="imgZoom" src="{{getImagen()}}" class="img-fluid img-thumbnail" alt="Mensaje" width= "1500" height="1340">
+                                            </div>                                        
+                                        </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </a>
+
+
+                        </div>
+                        <!--segunda col-->
+                        <div class="col-lg-4 col-sm-6"> 
+                            <div class="row">
+                                <div class="col-3"><p>Horas: </p></div>
+                                <div class="col-9">
+                                    <select name="horas" class="horas-combobox">
+                                        <option value="0"></option>
+                                        <option value="1">1</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <div class="row box-detalles-producto">
+                                <p class="text-detalles-producto">DETALLES DEL PRODUCTO:</p>
+                            </div>
+                            <ul>  
+                                <li class="text-detalles">Modelo:</li>
+                                <li class="text-detalles">Marca:</li>
+                                <li class="text-detalles">Color:</li>
+                                <li class="text-detalles">Tipo:</li>
+                                <li class="text-detalles">Imagen:</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-sm-6"> <!--tercera col-->
+                            <div style="margin-top: 95px;">
+
+                            </div>
+
+                            <form [formGroup]="myForm" autocomplete="off">
+
+                                                       
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="modelo" placeholder="Ingrese el modelo...">
+                                </mat-form-field>
+                        
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="marca" placeholder="Ingrese la marca...">
+                                </mat-form-field>
+                                                
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="color" placeholder="Ingrese el color...">
+                                </mat-form-field>
+                                                
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="tipo" placeholder="Ingrese el tipo...">
+                                </mat-form-field>
+                                
+                                <mat-form-field appearance="standard">
+                                    <input matInput formControlName="imagen" placeholder="Ingrese el link de la imagen...">
+                                </mat-form-field>
+                        
+                            </form>
+                            
+
+
+                        </div>
+                        <div class="espaciado">
+                            <button mat-raised-button color="primary" [disabled]="myForm.invalid" type="button" (click)="saveBicicleta()">Save</button>
+                            <button mat-raised-button color="secondary" (click)="cancel()">Cancel</button>
+                            <button mat-raised-button color="warn" (click)="deleteBicicleta()">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div> <!--style="background-color:red"-->
+
+    </div>
+</body>

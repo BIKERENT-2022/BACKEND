@@ -1,0 +1,24 @@
+.gps-container {
+    border: 1px solid black;
+    width: 70%; 
+    margin: 15px 15% 0 15%;
+    padding: 15px;
+}
+
+.title-gps {
+    font-size: 40px;
+    color:#00D0D0;
+}
+
+.mapa {
+    width: 90%;
+    height: 400px;
+    margin: 20px 5%;
+}
+
+.text-time{
+    font-size: 10px;
+    text-align: center;
+    color:#626A6D;
+}
+

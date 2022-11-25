@@ -1,0 +1,56 @@
+<div id = "MyProfile" >
+    <h1 class="TitleProfile" > Mi Perfil </h1>
+    <div class = "cardprofile">
+        <div class ="datos">
+                <img src ="../img/usuario_empresa.png" class = "imgperfil" alt = "imgperfil">
+                <p>Modificar foto</p>                
+            <a> Correo electrónico:</a><br>
+                <input type="email" name = "email" id = "email" placeholder="aurorabikes@gmail.com">
+            
+            <br><br>
+            <a> Direcciones:</a><br>
+                <input type="text" name = "text" id = "direction" placeholder="Av. la Marina 2510">  
+                <i onclick = DeleteInput(1) class="bi bi-x-square"></i> <i class="bi bi-pencil-square"></i>
+            <br><br>
+            <a> Tarjeta:</a><br>
+                <input type="text" name = "number" id = "creditcard" placeholder="123456789"> <i onclick = DeleteInput(2) class="bi bi-x-square"></i> <i class="bi bi-pencil-square"></i><br><br>
+            <a href="#"> <p> Cambiar contraseña</p></a>
+            <a> <p> Eliminar cuenta </p> </a>
+            <a href="login.component.html"> <p> Cerrar sesión </p> </a>
+            </div>
+
+        <div class = "datos">
+            <a> Nombre completo:</a><br>
+                <input type="text" name = "text" id = "fullname" placeholder="Aurora Paige"><br><br>
+            <a> RUC: </a><br>
+                <input type="text" name = "number" id = "RUC" placeholder="12345678910"><br><br>
+            <a> Contraseña:</a><br>
+                <input type="password" name = "password" id = "password" placeholder="*******"><br><br>
+            <a> Número de telefono:</a>
+                <input type="tel" name = "tel" id = "phone" placeholder = "952784961"> <i onclick = DeleteInput(3) class="bi bi-x-square"></i> 
+                <i class="bi bi-pencil-square"></i><br><br>
+            <button type="button" class="btn btn-outline-info">Perfil privado</button> 
+            <button type="button" class="btn btn-info">Perfil público</button>
+        </div>
+    </div>		  
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">¿Estas seguro de realizar esta operación?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="./img/BIKERENT.png" class="img-fluid img-thumbnail" alt="Mensaje">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar</button>
+                <button type="button" class="btn btn-primary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    </div>

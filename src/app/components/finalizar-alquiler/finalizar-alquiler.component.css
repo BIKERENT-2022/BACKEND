@@ -1,0 +1,132 @@
+/*****Carrito*****/
+.img-minibmx {
+    background-image: url(../../../assets/imgs/img-mini-bmx.png);
+}
+.button-back-carrito { 
+    background-color: white;
+    text-align: left;
+    border:none;
+    padding-top: 50px;
+    margin-bottom: 10px;
+}
+
+.button-back-carrito:active {
+    opacity: 70%;
+}
+
+.contenedor-carrito {
+    border: 1px solid rgb(170, 170, 170);
+    margin-bottom: 15px;
+}
+
+.title-carrito {
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.product-box {
+    border: 1px solid rgb(170, 170, 170);
+}
+
+.actualizar-box {
+    border: 1px solid rgb(170, 170, 170);
+    border-left: none;
+    border-right: none;
+}
+
+.txt-mini-bmx {
+    font-size: 30px;
+    padding-top: 40px;
+    padding-left: 50px;
+}
+
+.button-mp {
+    font-size: 30px;
+    margin-top: 50px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: white;
+    border: none;
+}
+
+.button-mp:active {
+    background-color: beige;
+}
+
+.txt-number {
+    font-size: 30px;
+    padding-top: 50px;
+    margin: 0 0;
+    text-align: center;
+}
+
+.img-minibmx-carrito{
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 50px;
+    margin: 20px;
+}
+
+.button-actualizar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: none;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-pedido {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color:#00B2FF;
+    background-color: white;
+    border-color: #00D0D0;
+    border-style: solid;
+    padding: 0 5px;
+}
+
+.button-actualizar:active {
+    background-color: beige;
+}
+
+.button-pedido:active {
+    opacity: 70%;
+}
+
+/*****Finalizar Alquiler*****/
+.actualizar-box-fin-a {
+    border: 1px solid rgb(154, 154, 154);
+    background-color: rgb(164, 164, 164);
+    margin-bottom: 5px;
+}
+
+.text-total {
+    padding-top: 5px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.text-envio {
+    text-align: right;
+    padding-right: 10px;
+}
+.col-4{
+    display: flex;
+}
+.modal-footer{
+    margin-left: auto;
+    margin-right: auto;
+}
+.btnSolAl {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+.button-center{
+    padding-top: 30px;
+    margin-bottom: 30px;
+}

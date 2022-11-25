@@ -1,0 +1,84 @@
+<div class ="Conf-Infor">
+    <div class="cajaGris">
+        <p>Confirmar información</p>
+    </div>
+        
+    <div class="cajaTransparente">
+
+        <form [formGroup]="myForm" (ngSubmit)="ValidarCampos()" novalidate>
+            <div class="cajas">
+                <div class="form-floating mb-2">
+                    <input formControlName = "Nombre" type="text" class="form-control" id="Nombre" placeholder="Nombre Completo">
+                    <label for="floatingInput">Nombre completo</label>
+                    <div *ngIf="myForm.get('Nombre')?.errors && myForm.get('Nombre')?.touched">
+                        <p class = "not_error" *ngIf="myForm.get('Nombre')?.hasError('required')"> Este campo es obligatorio</p>
+                        <p class = "not_error" *ngIf="myForm.get('Nombre')?.hasError('pattern')"> No se permiten caracteres numéricos </p>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input formControlName = "Correo" type="email" class="form-control" id="floatingInput" id="Correo" placeholder="Correo Electrónico">
+                    <label for="floatingInput">Correo Electrónico</label>
+                    <div *ngIf="myForm.get('Correo')?.errors && myForm.get('Correo')?.touched">
+                        <p class = "not_error" *ngIf="myForm.get('Correo')?.hasError('required')"> Este campo es obligatorio</p>
+                        <p class = "not_error" *ngIf="myForm.get('Correo')?.hasError('email')"> No cumple con el formato valido </p>
+                    </div>
+                </div>  
+
+                <div class="form-floating mb-2">
+                    <input formControlName = "Telefono" type="text" class="form-control" id="Telefono" placeholder="Teléfono">
+                    <label for="floatingInput">Teléfono</label>
+                    <div *ngIf="myForm.get('Telefono')?.errors && myForm.get('Telefono')?.touched">
+                        <p class = "not_error" *ngIf="myForm.get('Telefono')?.hasError('required')"> Este campo es obligatorio</p>
+                        <p class = "not_error" *ngIf="myForm.get('Telefono')?.hasError('minLength') || myForm.get('Telefono')?.hasError('maxLength')  "> El N° debe ser de 9 dígitos </p>
+                        <p class = "not_error" *ngIf="myForm.get('Telefono')?.hasError('pattern')"> Solo caracteres numéricos </p>
+                    </div>
+                </div> 
+
+                
+                <div class="form-floating mb-2">
+                    <input formControlName = "Direccion" type="text" class="form-control" id="Direccion" placeholder="Dirección">
+                    <label for="floatingInput">Dirección</label>
+                    <div *ngIf="myForm.get('Direccion')?.errors && myForm.get('Direccion')?.touched">
+                        <p class= "not_error" *ngIf="myForm.get('Direccion')?.hasError('required')"> Este campo es obligatorio</p>
+                    </div>
+                </div>
+            
+
+                <div class="form-floating mb-2">
+                    <input formControlName = "NumIdentificacion" type="text" class="form-control" id="NumIdentificacion" placeholder="NumIdentificacion">
+                    <label for="floatingInput">Numero de Identificacion</label>
+                    <div *ngIf="myForm.get('NumIdentificacion')?.errors && myForm.get('NumIdentificacion')?.touched">
+                        <p class = "not_error" *ngIf="myForm.get('NumIdentificacion')?.hasError('required')"> Este campo es obligatorio</p>
+                        <p class = "not_error" *ngIf="myForm.get('NumIdentificacion')?.hasError('pattern')"> Solo caracteres numéricos </p>
+                        <p class = "not_error" *ngIf="myForm.get('NumIdentificacion')?.hasError('minLength') || myForm.get('NumIdentificacion')?.hasError('maxLength')  "> El N° debe ser de 8 dígitos </p>
+                    </div>
+                </div>
+
+                <div class="form-floating mb-2">
+                    <input formControlName = "Cupon" type="text" class="form-control" id="Direccion" placeholder="Dirección">
+                    <label for="floatingInput">Cupon (No obligatorio)</label>
+                    <div *ngIf="myForm.get('Cupon')?.errors && myForm.get('Cupon')?.touched">
+                        <p class= "not_error" *ngIf="myForm.get('Cupon')?.hasError('required')"> Este campo es obligatorio</p>
+                    </div>
+                </div>
+
+                <div id="msg"> 
+                    <!-- Mensajes de Verificación -->
+                    <div id="campos_vacios" class="alert alert-warning ocultar" role="alert">
+                        Los campos están vacíos
+                    </div>
+                    <!-- Fin Mensajes de Verificación -->
+                </div>
+            </div>
+
+            <div class="boton" >
+                <button type="button" class="btn btn-outline-info" routerLink="/afiliarTarjeta">Afiliar tarjeta</button>
+            </div>
+        
+            <div class="boton" >
+                <button type="submit" id = "accept" class="btn btn-outline-info">Aceptar</button>
+            </div> 
+        </form>   
+    </div>
+</div>

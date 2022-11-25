@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+div.card-header{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+    border-color: #8B8B8B;
+    background-color: white;
+}
+a.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:.4rem 3rem;
+    background-color:#00B2FF;
+    color:White;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transition: all .3s linear;
+}
+a.btn2{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:.4rem 3rem;
+    background-color: white;
+    border-color: #052473;
+    border-radius: 0.3rem;
+    border-style: solid;
+    color:#052473;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transition: all .3s linear;
+    
+}
+a.btn1{
+    display: inline-block;
+    margin-top: 1rem;
+    padding:.4rem 3rem;
+    background-color: white;
+    border-color: #00D0D0;
+    border-radius: 0.3rem;
+    border-style: solid;
+    color:#00B2FF;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transition: all .3s linear;
+}
+.btn2:hover{
+    transform: scale(1.1);
+    color: #00B2FF;
+}
+.btn1:hover{
+    transform: scale(1.1);
+    color: #00B2FF;
+}
+.btn:hover{
+    transform: scale(1.1);
+    color: #052473;
+    background-color: white;
+}
+h5.card-title:nth-child(2){
+    margin-top: 3vh;
+}
+div.controlc{
+    padding: .3rem;
+}
+input.form-control.form-control-lg{
+    background-color: white;
+    border-color: #00D0D0;
+    border-radius: 0.3rem;
+    border-style: solid;
+    color:#00B2FF;
+    text-decoration: none;
+}
+div.card.text-center.col-md-6.rounded-3.vh-80.my-auto.mx-auto{
+    transform: translateY(150px);
+    display: flex;
+}

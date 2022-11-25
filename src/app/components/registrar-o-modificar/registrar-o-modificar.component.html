@@ -1,0 +1,146 @@
+<body>
+    <app-navbar-empresa></app-navbar-empresa>
+    <div class="container contenedor-bicicletas">
+        <div class="row">
+            <div class="col-lg-3">                                                                  <!--Primera columna-->
+                <button class="button-back"><i class="fa-solid fa-angle-left"></i></button>
+                <div class="row-filtros">
+                    <div class="row row-primera"> <!--filtros título-->
+                        <p><i class="fa-solid fa-sliders"></i> Filtro de búsqueda</p>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <div class="row" style="margin-left:20%;">
+                                <p class="mg-bot">Marca</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" style="text-align:right; padding-right:0;">
+                                    <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                                <div class="col">
+                                    <input class="search-box mg-bot" type="text" placeholder="Buscar">
+                                </div>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck1" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck1" style="margin-left:10px;"> MBC bikes</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck2" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck2" style="margin-left:10px;"> Cannodale</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--precio-->
+                                <p class="mg-bot">Precio</p>
+                            </div>
+                            <div class="row range-line">
+                                <input type="range" class="form-range" id="customRange1">
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--color-->
+                                <p class="mg-bot">Color</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-3" style="text-align:right; padding-right:0;">
+                                    <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                                <div class="col">
+                                    <input class="search-box mg-bot" type="text" placeholder="Buscar">
+                                </div>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck3" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck3" style="margin-left:10px;"> Azul</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck4" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck4" style="margin-left:10px;"> Celeste</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line"></div> <!--línea-->
+                            <div class="row" style="margin-left:20%;"> <!--Modelos-->
+                                <p class="mg-bot">Modelos</p>
+                            </div>
+                            <div class="row"> <!--checks-->
+                                <div class="container">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck5" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck5" style="margin-left:10px;"> Eléctricas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheck6" style="margin-left:20%;">
+                                        <label class="form-check-label" for="flexCheck6" style="margin-left:10px;"> Montañeras</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-center">
+                                <button class="button-filtros">Aplicar filtros</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-8">                                                  <!--Segunda columna-->
+                <div class="row">
+                    <div class="col-8"> <!--titulo-->
+                        <label style="color: #00D0D0; font-size: 32px;"><b>Registrar o modificar modelos</b></label> 
+                        <i class="bi bi-pencil-square" style="font-size: 30px;" (click)="formularioRegistrar()" style="cursor:pointer;"></i> 
+                    </div>
+                    <div class="col-4 search-div">
+                        <button class="search-button" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+
+
+                        <mat-form-field appearance="standard" style="margin: -30px 0;">
+                            <mat-label>Search</mat-label>
+                            <input matInput (keyup)="applyFilter($event)"  placeholder="Modelo..." #input>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="row row-modelos"> <!--imagenes bicicletas-->
+                    <div class="row">
+                        
+                        <div>
+                            <div class="table-scroll">
+                            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%; background-color: transparent;">
+                              
+                                <!-- IMG Column -->
+                                <ng-container matColumnDef="img">
+                                  <th mat-header-cell *matHeaderCellDef> Image </th>
+                                  
+                                  <td mat-cell *matCellDef="let element"> 
+                                    <a style="cursor:pointer; margin: 100px;" (click)="bicicletaEscogida(element.id)">
+                                        <img src="{{element.imagen}}" alt="Image" style="width: 200px; height: auto;"> 
+                                        <label style="color: black; margin-left: 20px; font-size: 20px; font-weight: bold; cursor:pointer">{{element.modelo}}</label>
+
+                                    </a>
+                                  </td>
+                                </ng-container>
+
+                                <tr mat-row *matRowDef="let row; columns: displayColumns;"></tr>
+                              </table>
+                            </div>
+
+                        </div>
+                          
+                    </div>
+                </div>
+                <br>
+                <button mat-raised-button-color="secondary" (click)="exportExcel()">Exportar</button>
+                <br>
+            </div>
+        </div> 
+    </div>
+    
+</body>

@@ -1,0 +1,126 @@
+
+.bg{
+    margin-top: auto;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    background-color: #8B8B8B;
+}
+input {
+    border: solid #00D0D0;
+    color:#00D0D0;
+    outline: none;
+    height: 20px;
+    font-size: 16px;
+}
+form{
+    margin: 50px;
+}
+.logo{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+.logo img{
+    min-width: 150px;
+    width: 13%;
+    margin-bottom: 5px;
+}
+.form-control{
+    height: 40px;
+    align-items: flex-start;
+}
+
+.text-center{
+    font-weight: bold;
+    color:#00D0D0;
+    font-size: 50px;
+    padding-top: 50px;
+}
+
+.unete{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    color:black;
+    font-size:25px;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.a{
+    min-width: 200px;
+    margin: auto;
+    width: 25%;
+}
+label{
+    color:#00D0D0;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.tipo{
+    justify-content: center;
+    display: flex;
+    align-items: center;    
+    vertical-align: middle;
+    
+}
+.t{
+    font-size: 16px;
+    margin-top: 0%;
+    margin-right: 2%;
+}
+.btn-group{    
+    background-color: white;
+    height: 38px;
+    align-items: center;
+    font-size: 12px;
+}
+.btn-check{
+    height: 20px;
+    padding: 0px;
+}
+button {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-top: 3%;
+    height: 2%;
+}
+.btn-outline-info{
+    font-weight: bold;
+    min-width: 110px;
+}
+
+.not_error {
+    color: red;
+    text-align: center;
+    font-size: 14px;    
+	position: absolute;    
+    margin-bottom: 8px; 
+}
+.ocultar {
+    display: none;
+} 
+.mostrar {
+    display: block;  
+}
+.msg{
+    justify-content: center;
+}
+.alert{
+    width:250px;
+    font-size: 14px;
+    text-align:center;
+    padding: 2px;    
+    margin: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}

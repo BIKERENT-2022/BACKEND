@@ -1,0 +1,79 @@
+.Conf-Infor
+{   
+    margin-top: 3%;
+}
+
+.cajaGris{
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    background-color: grey;
+    font-size: 25px;
+    font-weight: bold;
+}
+.cajaTransparente{
+    border: solid grey;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cajas{
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+.cajas input{
+    border: solid #00D0D0;
+    margin-bottom: 30px;
+}
+.form-floating{    
+    color:#00D0D0;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    width: 75%;
+}    
+
+.boton{
+    margin: 30px;
+    height: 50px;
+    display: flex;
+    justify-content: center;    
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-outline-info{
+    width: 150px;
+    font-weight: bold;
+    background-color: white;
+}
+
+.not_error {
+    color: red;
+    text-align: center;
+    font-size: 14px;    
+	position: absolute;    
+    margin-top: -26px;
+    margin-left: 10px;
+}
+.ocultar {
+    display: none;
+} 
+.mostrar {
+    display: block;  
+}
+.msg{
+    justify-content: center;
+}
+.alert{
+    width:250px;
+    font-size: 14px;
+    text-align:center;
+    padding: 2px;    
+    margin: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}

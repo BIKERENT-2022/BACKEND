@@ -1,0 +1,36 @@
+div.card-header{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: bold;
+    color: #000000;
+    font-size: 20px;
+    border-color: #8B8B8B;
+    background-color: white;
+}
+body{
+    font-family: 'Roboto';
+}
+html{
+    font-family: 'Roboto';
+}
+input.form-control.form-control-lg{
+    background-color: white;
+    border-color: #00D0D0;
+    border-radius: 0.3rem;
+    border-style: solid;
+    color:#00B2FF;
+    text-decoration: none;
+
+}
+div.card.text-center.col-md-8.vh-80.my-auto.mx-auto{
+    transform: translateY(150px);
+    width: 100%;
+    display: flex;
+}
+div.row.mb-2{
+    transform: translateX(13rem) translateY(8rem);
+}
+body {
+    overflow-x: hidden
+    
+}

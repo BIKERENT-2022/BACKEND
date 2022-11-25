@@ -1,0 +1,125 @@
+{
+  "Cliente": [
+    {
+      "id": 1,
+      "Cuenta": "Cliente",
+      "NombreUsuario": "diego",
+      "CorreoElectronico": "diego@hotmail.com",
+      "contrasenia": "diego"
+    },
+    {
+      "id": 2,
+      "Cuenta": "Empresa",
+      "NombreUsuario": "diegooo",
+      "CorreoElectronico": "dieghko@hotmail.com",
+      "contrasenia": "diegruno"
+    }
+  ],
+  "Repartidores": [
+    {
+      "id": 1,
+      "Nombres": "Diego Alberto",
+      "Apellidos": "Casaverde Centeno",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "alberto@hotmail.com"
+    },
+    {
+      "id": 2,
+      "Nombres": "Deisy",
+      "Apellidos": "Deisy",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "Deisy@hotmail.com"
+    },
+    {
+      "id": 3,
+      "Nombres": "Saul",
+      "Apellidos": "Saul",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "Saul@hotmail.com"
+    },
+    {
+      "id": 4,
+      "Nombres": "Jose",
+      "Apellidos": "Jose",
+      "DNI": "71295039",
+      "Celular": "123456789",
+      "CorreoElectronico": "Jose@hotmail.com"
+    },
+    {
+      "id": 5,
+      "Nombres": "zzz",
+      "Apellidos": "aaa",
+      "DNI": "71295039",
+      "Celular": "987654321",
+      "CorreoElectronico": "a@hotmail.com"
+    }
+  ],
+  "Bicicleta": [
+    {
+      "id": 1,
+      "id_empresa": "abc",
+      "modelo": "BMX",
+      "marca": "Marca A",
+      "color": "Azul",
+      "tipo": "Campera",
+      "imagen": "https://www.sanferbike.com/videostv/wp-content/uploads/URBAN-1-600x400-1.jpg"
+    },
+    {
+      "id": 2,
+      "id_empresa": "a",
+      "modelo": "Plegable",
+      "marca": "c",
+      "color": "d",
+      "tipo": "e",
+      "imagen": "https://www.sanferbike.com/videostv/wp-content/uploads/URBAN-1-600x400-1.jpg"
+    },
+    {
+      "id": 3,
+      "id_empresa": "a",
+      "modelo": "Montañera",
+      "marca": "c",
+      "color": "d",
+      "tipo": "e",
+      "imagen": "https://home.ripley.com.pe/Attachment/WOP_5/2022274953088/2022274953088-2.jpg"
+    },
+    {
+      "id": 4,
+      "id_empresa": "a",
+      "modelo": "a",
+      "marca": "a",
+      "color": "a",
+      "tipo": "a",
+      "imagen": "https://home.ripley.com.pe/Attachment/WOP_5/2022274953088/2022274953088-2.jpg"
+    },
+    {
+      "id": 5,
+      "id_empresa": "asdf",
+      "modelo": "adf",
+      "marca": "asdf",
+      "color": "asdf",
+      "tipo": "asdf",
+      "imagen": "https://home.ripley.com.pe/Attachment/WOP_5/2022274953088/2022274953088-2.jpg"
+    },
+    {
+      "id": 7,
+      "id_empresa": "a",
+      "modelo": "a",
+      "marca": "a",
+      "color": "a",
+      "tipo": "a",
+      "imagen": "https://lh3.googleusercontent.com/u/0/drive-viewer/AJc5JmQT78bs-CKJP8SnuNJGUm45DvV3N62etSp5uL9TnxGdkM9rSYyCQKFZCWemES4sPzgISyFhfqQTbPhl6KhitEvpKECj=w1920-h922"
+    },
+    {
+      "id": 8,
+      "id_empresa": "213452134",
+      "modelo": "12342134",
+      "marca": "12342134",
+      "color": "12342134",
+      "tipo": "21342134",
+      "imagen": "https://www.elcarrocolombiano.com/wp-content/uploads/2022/08/bicicleta-electrica-toyota.jpg"
+    }
+  ]
+}

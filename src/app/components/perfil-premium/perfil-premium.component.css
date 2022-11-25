@@ -1,0 +1,62 @@
+.imgperfil{
+    width: 140px;
+    height: 140px;
+    border-radius: 100px;
+	object-fit: cover; /*ajusta calidad img sgn tamaño*/
+	display:block;
+	margin:auto;
+}
+.title{
+    font-weight: bold;
+    font-size: 40px;
+    color:black;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pend{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;    
+    font-size: 20px;
+    color:#052473;
+}
+.btn-group {
+    margin-bottom: 10px;
+}
+.btn-light{
+    text-align: left;
+    border-bottom: 1.75px solid currentColor;
+    background-color: white;
+    border-radius: 0;
+    width: 360px;
+    color:#000000;
+}
+.btsmall{
+    width: 30px;
+}
+.visually-hidden{
+    width: 2px;
+}
+input {
+    width: 300px;
+    align-content: flex-start;
+}
+.btn-outline-info {
+    align-items: center;
+    margin-left: 50px;
+}
+
+.inf{
+    position: absolute;
+    top: 50%;
+    left: 50%;       
+    margin-top: -250px;
+    margin-left: -250px; 
+}
+
+.extras {
+    margin-top: 15px;
+    left:auto;
+    right: auto;
+}

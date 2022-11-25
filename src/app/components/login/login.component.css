@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-login {
+    padding-top: 100px;
+}
+body{
+    background-color: #8B8B8B;
+}
+
+.logo{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    margin-top: 10px;
+    width: 10%;
+    margin-bottom: 5px;
+}
+
+
+.titulo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.titulo h1{
+    font-weight: bold;
+    color:#00D0D0;
+}
+
+
+.cajas input{
+    border: solid #00D0D0;
+    width: 400px;
+}
+.a{
+    display: flex;
+    justify-content: center;
+}
+.form-label{
+    font-weight: bold;
+    color: grey;
+}
+
+
+p{
+    margin-bottom: 10px;
+    color: grey;
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+
+.boton{
+    height: 50px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;    
+   
+}
+.boton .btn-outline-info{
+    font-weight: bold;
+    background-color: white; 
+    padding: 5px;
+}
+
+
+.tipo{
+    display: flex;
+    justify-content: center;
+}
+.tipo .btn-outline-info{
+    font-weight: bold;
+    padding: 4px;
+    margin-left: 10px;
+}
+
+.text-muted{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: 25px
+}
+
+.alert{
+    height: 50px;
+    width:200px;
+    font-size: 14px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
+}

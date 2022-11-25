@@ -1,0 +1,53 @@
+.TitleProfile{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 25%;
+    font-weight: bold;
+}
+.cardprofile{
+    margin-left: 25%;
+    margin-right: 25%;
+    padding-bottom: 50px;
+	width: auto;
+	height: auto;
+}
+.datos 
+{
+    padding: 5%;
+	height: auto;
+	float:left;       
+}
+.datos p {
+	text-align: center;
+    font-weight: bold;
+}
+
+.imgperfil{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+	object-fit: cover; /*ajusta calidad img sgn tamaño*/
+	display:block;
+	margin:auto;
+}
+input {
+    border-radius: 0.2rem;
+}
+.datos a {    
+    text-decoration: none;
+	color: black;
+}
+i {
+    padding-left: 6px;
+}
+.bi-pencil-square {
+	color: #00D0D0;
+	font-size: 23px;
+}
+.bi-x-square {
+	color: #00D0D0;
+	font-size: 21px;
+}
+button {
+    margin-right: 10px;
+}

@@ -1,0 +1,31 @@
+.solicitud 
+{
+    position: absolute;
+    padding: auto;
+    justify-content: center;
+    text-align: center;
+    width: 700px;
+	height: 500px;
+    top: 50%;
+    left: 50%;       
+    margin-top: -230px;
+    margin-left: -350px;
+    font-size: 24px;
+}
+.imgperfil{    
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;    
+    object-fit: cover; /*ajusta calidad img sgn tamaÃ±o*/
+    display:block;
+    margin:auto;
+}
+figcaption p {
+    padding-top: 5px;
+    color:#00D0D0;
+    font-weight: bold;
+}
+.datos p {
+	text-align: center;
+    color: #8B8B8B;
+}
