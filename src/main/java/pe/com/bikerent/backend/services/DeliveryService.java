@@ -13,5 +13,5 @@ public interface DeliveryService {
     public Delivery updateDeliveryByIdS(Long id, Delivery delivery);
     public List<Delivery> getAllDeliveriesS();
     public Delivery getDeliveryByIdS(Long id);
-    public List<Delivery> getALLDeliveriesByRepartidorS(String repartidor);
+    public List<Delivery> getALLDeliveriesByRepartidorS(String nombre);
 }
