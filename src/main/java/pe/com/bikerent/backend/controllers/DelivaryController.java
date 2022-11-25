@@ -6,9 +6,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pe.com.bikerent.backend.entities.*;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
+import pe.com.bikerent.backend.exporters.ClientesExporterExcel;
+import pe.com.bikerent.backend.exporters.RepartidoresExporterExcel;
 import pe.com.bikerent.backend.repositories.DeliveryRepository;
 import pe.com.bikerent.backend.services.DeliveryService;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -16,8 +20,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class DelivaryController {
 
-    /*@Autowired
-    private DeliveryRepository deliveryRepository;*/
+    @Autowired
+    private DeliveryRepository deliveryRepository;
     @Autowired
     private DeliveryService deliveryService;
 
@@ -25,13 +29,11 @@ public class DelivaryController {
     @PostMapping("/deliveries")
     public ResponseEntity<Delivery> createDelivery(@RequestBody Delivery delivery) {
         Delivery newDelivery = deliveryService.createDeliveryS(new Delivery(
-                delivery.getRepartidor(),
-                delivery.getFecha_envio(),
-                delivery.getFecha_recojo(),
-                delivery.getHora_envio(),
-                delivery.getHora_recojo(),
-                delivery.getDireccion_envio(),
-                delivery.getDireccion_recojo()));
+                delivery.getNombre(),
+                delivery.getDni(),
+                delivery.getApellido(),
+                delivery.getNombre(),
+                delivery.getCelular()));
         return new ResponseEntity<Delivery>(newDelivery, HttpStatus.CREATED);
 
         /*
@@ -123,8 +125,8 @@ public class DelivaryController {
 
     /*---------------------- LISTAR DELIVERIRES SEGUN EL REPARTIDOR ---------------------*/
     @GetMapping("/deliveries/repartidor/{repartidor}")
-    public ResponseEntity<List<Delivery>> getALLDeliveriesByRepartidor(@PathVariable("repartidor") String repartidor){
-        List<Delivery> deliveries = deliveryService.getALLDeliveriesByRepartidorS(repartidor);
+    public ResponseEntity<List<Delivery>> getALLDeliveriesByRepartidor(@PathVariable("repartidor") String nombre){
+        List<Delivery> deliveries = deliveryService.getALLDeliveriesByRepartidorS(nombre);
         if(deliveries.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
@@ -138,5 +140,24 @@ public class DelivaryController {
         return new ResponseEntity<List<Delivery>>(deliveries,HttpStatus.OK);
         */
     }
+
+
+
+    @GetMapping("/deliveries/export/excel")
+    public void exportToExcel(HttpServletResponse response) throws IOException {
+
+        response.setContentType("application/octet-stream");
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=employee_report";
+        response.setHeader(headerKey,headerValue);
+
+        List<Delivery> delivery;
+        delivery = deliveryRepository.findAll();
+
+        RepartidoresExporterExcel exporterExcel = new RepartidoresExporterExcel(delivery);
+        exporterExcel.export(response);
+    }
+
+
 
 }

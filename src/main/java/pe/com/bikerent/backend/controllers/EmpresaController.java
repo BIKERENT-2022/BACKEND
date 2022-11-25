@@ -1,5 +1,7 @@
 package pe.com.bikerent.backend.controllers;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +19,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class EmpresaController {
 
-    /*@Autowired
-    private EmpresaRepository empresaRepository;*/
+    @Autowired
+    private EmpresaRepository empresaRepository;
     @Autowired
     private EmpresaService empresaService;
 
@@ -195,6 +197,14 @@ public class EmpresaController {
         empresa.setBicicletas(null);
         return new ResponseEntity<Empresa>(empresa,HttpStatus.OK);
         */
+    }
+
+
+    @GetMapping("/empresas/id/{id}")
+    public ResponseEntity<Empresa> getById(@PathVariable("id") Long id){
+        Empresa empresa = empresaRepository.getById(id);
+
+        return new ResponseEntity<Empresa>(empresa,HttpStatus.OK);
     }
 
 }

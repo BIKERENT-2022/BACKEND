@@ -1,32 +1,39 @@
 package pe.com.bikerent.backend.controllers;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.transaction.annotation.Transactional;
+import net.bytebuddy.asm.Advice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pe.com.bikerent.backend.entities.Alquiler;
-import pe.com.bikerent.backend.entities.Bicicleta;
-import pe.com.bikerent.backend.entities.Empresa;
-import pe.com.bikerent.backend.entities.Usuario;
+import pe.com.bikerent.backend.entities.*;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
+import pe.com.bikerent.backend.exporters.BicicletasExporterExcel;
+import pe.com.bikerent.backend.exporters.ClientesExporterExcel;
 import pe.com.bikerent.backend.repositories.BicicletaRepository;
 import pe.com.bikerent.backend.repositories.EmpresaRepository;
 import pe.com.bikerent.backend.repositories.UsuarioRepository;
 import pe.com.bikerent.backend.services.BicicletaService;
+
+import javax.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class BicicletaController {
-    /*@Autowired
+    @Autowired
     private BicicletaRepository bicicletaRepository;
     @Autowired
-    private EmpresaRepository empresaRepository;*/
+    private EmpresaRepository empresaRepository;
     @Autowired
     private BicicletaService bicicletaService;
 
 
     /*----------------------------------------------------- CREAR BICICLETA -----------------------------------------------------*/
+    @Transactional
     @PostMapping("/bicicletas")
     public ResponseEntity<Bicicleta> createBicicleta(@RequestBody Bicicleta bicicleta) {
 
@@ -55,6 +62,7 @@ public class BicicletaController {
 
 
     /*----------------------------------------------------- ACTUALIZAR ALQUILER -----------------------------------------------------*/
+    @Transactional
     @PutMapping("/bicicletas/{id}")
     public ResponseEntity<Bicicleta> updatebicicletasById(@PathVariable("id") Long id, @RequestBody Bicicleta bicicleta) {
 
@@ -105,6 +113,8 @@ public class BicicletaController {
 
 
     /* -------------------------------------------- LISTA DE BICICLETAS -------------------------------------------- */
+
+
     @GetMapping("/bicicletas")
     public ResponseEntity<List<Bicicleta>> getAllBicicletas(){
 
@@ -235,6 +245,23 @@ public class BicicletaController {
         }
         return new ResponseEntity<List<Bicicleta>>(bicicletas,HttpStatus.OK);
         */
+    }
+
+
+
+    @GetMapping("/bicicletas/export/excel")
+    public void exportToExcel(HttpServletResponse response) throws IOException {
+
+        response.setContentType("application/octet-stream");
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=employee_report";
+        response.setHeader(headerKey,headerValue);
+
+        List<Bicicleta> bici;
+        bici = bicicletaRepository.findAll();
+
+        BicicletasExporterExcel exporterExcel = new BicicletasExporterExcel(bici);
+        exporterExcel.export(response);
     }
 
 }
