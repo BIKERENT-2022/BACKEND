@@ -22,8 +22,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class UsuarioController {
-
-    /*@Autowired
+/*
+    @Autowired
     private UsuarioRepository usuarioRepository;
     @Autowired
     private ClienteRepository clienteRepository;
@@ -162,4 +162,5 @@ public class UsuarioController {
         return new ResponseEntity<Usuario>(usuario,HttpStatus.OK);
         */
     }
+
 }

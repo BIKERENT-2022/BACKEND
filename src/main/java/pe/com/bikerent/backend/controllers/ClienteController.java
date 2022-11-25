@@ -9,10 +9,13 @@ import pe.com.bikerent.backend.entities.Bicicleta;
 import pe.com.bikerent.backend.entities.Cliente;
 import pe.com.bikerent.backend.entities.Empresa;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
+import pe.com.bikerent.backend.exporters.ClientesExporterExcel;
 import pe.com.bikerent.backend.repositories.ClienteRepository;
 import pe.com.bikerent.backend.repositories.EmpresaRepository;
 import pe.com.bikerent.backend.services.ClienteService;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:4200")
@@ -20,8 +23,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class ClienteController {
 
-    /*@Autowired
-    private ClienteRepository clienteRepository;*/
+    @Autowired
+    private ClienteRepository clienteRepository;
     @Autowired
     private ClienteService clienteService;
 
@@ -197,5 +200,26 @@ public class ClienteController {
         return new ResponseEntity<Cliente>(cliente,HttpStatus.OK);
         */
     }
+
+
+
+
+
+    @GetMapping("/clientes/export/excel")
+    public void exportToExcel(HttpServletResponse response) throws IOException {
+
+        response.setContentType("application/octet-stream");
+        String headerKey = "Content-Disposition";
+        String headerValue = "attachment; filename=employee_report";
+        response.setHeader(headerKey,headerValue);
+
+        List<Cliente> cliente;
+        cliente = clienteRepository.findAll();
+
+        ClientesExporterExcel exporterExcel = new ClientesExporterExcel(cliente);
+        exporterExcel.export(response);
+    }
+
+
 
 }

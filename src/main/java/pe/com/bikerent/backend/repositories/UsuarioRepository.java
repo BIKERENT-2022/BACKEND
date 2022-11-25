@@ -16,4 +16,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario,Long> {
     /* ---------------------- LISTAR TODOS LOS USUARIOS SEGUN SU TIPO ---------------------*/
     @Query(value = "SELECT * FROM usuarios WHERE tipo_usuario=?1", nativeQuery = true)
     List<Usuario> findByTipoUsuarioSQL(String tipo_usuario);
+
 }
