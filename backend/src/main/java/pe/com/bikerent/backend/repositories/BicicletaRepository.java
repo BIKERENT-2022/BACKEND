@@ -20,4 +20,6 @@ public interface BicicletaRepository extends JpaRepository<Bicicleta,Long> {
 
     @Query(value = "SELECT * FROM bicicletas WHERE tipo=?1", nativeQuery = true)
     List<Bicicleta> findByTipoSQL(String tipo);
+
+
 }

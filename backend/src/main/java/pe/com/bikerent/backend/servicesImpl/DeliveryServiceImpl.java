@@ -21,13 +21,11 @@ public class DeliveryServiceImpl implements DeliveryService {
     @Transactional
     public Delivery createDeliveryS(Delivery delivery){
         Delivery newDelivery = deliveryRepository.save(new Delivery(
-                delivery.getRepartidor(),
-                delivery.getFecha_envio(),
-                delivery.getFecha_recojo(),
-                delivery.getHora_envio(),
-                delivery.getHora_recojo(),
-                delivery.getDireccion_envio(),
-                delivery.getDireccion_recojo()));
+                delivery.getNombre(),
+                delivery.getDni(),
+                delivery.getApellido(),
+                delivery.getNombre(),
+                delivery.getCelular()));
         return newDelivery;
     }
 
@@ -36,20 +34,16 @@ public class DeliveryServiceImpl implements DeliveryService {
         Delivery foundDelivery = deliveryRepository.findById(id).
                 orElseThrow(()->new ResourceNotFoundException("Not found delivery with id="+id));
 
-        if (delivery.getRepartidor()!=null)
-            foundDelivery.setRepartidor(delivery.getRepartidor());
-        if (delivery.getFecha_envio()!=null)
-            foundDelivery.setFecha_envio(delivery.getFecha_envio());
-        if (delivery.getFecha_recojo()!=null)
-            foundDelivery.setFecha_recojo(delivery.getFecha_recojo());
-        if (delivery.getHora_envio()!=null)
-            foundDelivery.setHora_envio(delivery.getHora_envio());
-        if (delivery.getHora_recojo()!=null)
-            foundDelivery.setHora_recojo(delivery.getHora_recojo());
-        if (delivery.getDireccion_envio()!=null)
-            foundDelivery.setDireccion_envio(delivery.getDireccion_envio());
-        if (delivery.getDireccion_recojo()!=null)
-            foundDelivery.setDireccion_recojo(delivery.getDireccion_recojo());
+        if (delivery.getNombre()!=null)
+            foundDelivery.setNombre(delivery.getNombre());
+        if (delivery.getDni()!=null)
+            foundDelivery.setDni(delivery.getDni());
+        if (delivery.getApellido()!=null)
+            foundDelivery.setApellido(delivery.getApellido());
+        if (delivery.getNombre()!=null)
+            foundDelivery.setNombre(delivery.getNombre());
+        if (delivery.getCelular()!=null)
+            foundDelivery.setCelular(delivery.getCelular());
 
 
         Delivery updatedDelivery = deliveryRepository.save(foundDelivery);
@@ -70,8 +64,8 @@ public class DeliveryServiceImpl implements DeliveryService {
         return delivery;
     }
 
-    public List<Delivery> getALLDeliveriesByRepartidorS(String repartidor){
-        List<Delivery> deliveries = deliveryRepository.findByRepartidorSQL(repartidor);
+    public List<Delivery> getALLDeliveriesByRepartidorS(String nombre){
+        List<Delivery> deliveries = deliveryRepository.findByRepartidorSQL(nombre);
         return deliveries;
     }
 

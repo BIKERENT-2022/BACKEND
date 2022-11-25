@@ -1,4 +1,5 @@
 package pe.com.bikerent.backend.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
@@ -26,6 +27,7 @@ public class Empresa {
     private String imagen;
 
 
+    @JsonIgnore
     @OneToMany(mappedBy = "empresa")
     private List<Bicicleta> bicicletas;
 

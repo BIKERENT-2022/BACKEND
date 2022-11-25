@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pe.com.bikerent.backend.entities.Bicicleta;
+import pe.com.bikerent.backend.entities.Empresa;
 import pe.com.bikerent.backend.exceptions.ResourceNotFoundException;
 import pe.com.bikerent.backend.repositories.BicicletaRepository;
 import pe.com.bikerent.backend.services.BicicletaService;
@@ -64,8 +65,8 @@ public class BicicletaServiceImpl implements BicicletaService {
     public List<Bicicleta> getAllBicicletasS(){
         List<Bicicleta> bicicletas = bicicletaRepository.findAll();
         for (Bicicleta b : bicicletas) {
-            b.setEmpresa(null);
-            b.setAlquileres(null);
+            //b.setEmpresa(null);
+            //b.setAlquileres(null);
         }
         return bicicletas;
     }
@@ -73,16 +74,16 @@ public class BicicletaServiceImpl implements BicicletaService {
     public Bicicleta getBicicletaByIdS(Long id){
         Bicicleta bicicleta = bicicletaRepository.findById(id).
                 orElseThrow(()->new ResourceNotFoundException("Not found bicicleta with id="+id));;
-        bicicleta.getEmpresa().setBicicletas(null);
-        bicicleta.setAlquileres(null);
+        //bicicleta.getEmpresa().setBicicletas(null);
+        //bicicleta.setAlquileres(null);
         return bicicleta;
     }
 
     public List<Bicicleta> getAllBicicletasByModeloS(String modelo){
         List<Bicicleta> bicicletas = bicicletaRepository.findByModeloSQL(modelo);
         for (Bicicleta b : bicicletas) {
-            b.setEmpresa(null);
-            b.setAlquileres(null);
+            //b.setEmpresa(null);
+            //b.setAlquileres(null);
         }
         return bicicletas;
     }
@@ -90,8 +91,8 @@ public class BicicletaServiceImpl implements BicicletaService {
     public List<Bicicleta> getAllBicicletasByMarcaS(String marca){
         List<Bicicleta> bicicletas = bicicletaRepository.findByMarcaSQL(marca);
         for (Bicicleta b : bicicletas) {
-            b.setEmpresa(null);
-            b.setAlquileres(null);
+            //b.setEmpresa(null);
+            //b.setAlquileres(null);
         }
         return bicicletas;
     }
@@ -99,8 +100,8 @@ public class BicicletaServiceImpl implements BicicletaService {
     public List<Bicicleta> getAllBicicletasByColorS(String color){
         List<Bicicleta> bicicletas = bicicletaRepository.findByColorSQL(color);
         for (Bicicleta b : bicicletas) {
-            b.setEmpresa(null);
-            b.setAlquileres(null);
+            //b.setEmpresa(null);
+            //b.setAlquileres(null);
         }
         return bicicletas;
     }
@@ -108,8 +109,8 @@ public class BicicletaServiceImpl implements BicicletaService {
     public List<Bicicleta> getAllBicicletasByTipoS(String tipo){
         List<Bicicleta> bicicletas = bicicletaRepository.findByTipoSQL(tipo);
         for (Bicicleta b : bicicletas) {
-            b.setEmpresa(null);
-            b.setAlquileres(null);
+            //b.setEmpresa(null);
+            //b.setAlquileres(null);
         }
         return bicicletas;
     }

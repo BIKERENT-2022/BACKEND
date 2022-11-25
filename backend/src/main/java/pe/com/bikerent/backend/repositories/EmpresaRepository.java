@@ -17,4 +17,7 @@ public interface EmpresaRepository extends JpaRepository<Empresa,Long> {
     @Query(value = "SELECT * FROM empresas WHERE correo=?1", nativeQuery = true)
     Empresa findByCorreoSQL(String correo);
 
+    @Query(value = "SELECT * FROM empresas WHERE id=?1", nativeQuery = true)
+    Empresa getById(Long id);
+
 }
